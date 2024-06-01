@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Home from './Home/home.jsx';
 import Login from './Authentication/Login.jsx';
+import Register from './Authentication/Register.jsx';
+import AuthProvider from './Authentication/Authprovider.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,11 +23,15 @@ const router = createBrowserRouter([
         path:'/log',
         element:<Login></Login>
      },
+     {
+      path:'/reg',
+      element:<Register></Register>
+     }
     ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>,
 )
