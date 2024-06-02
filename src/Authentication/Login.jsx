@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./Authprovider";
 import Swal from "sweetalert2";
 const Login = () => {
-    const {signIn}=useContext(AuthContext)
+    const {signIn,googleSignin,user}=useContext(AuthContext)
+    console.log(user)
     const handleSubmit = (e) => {
         e.preventDefault();
         const Email = e.target.email.value;
@@ -24,6 +25,19 @@ const Login = () => {
                     text: `${error.message}`,
                   });
             })
+    }
+    const handleclicked=()=>{
+        googleSignin()
+        .then(res=>{
+            Swal.fire("You are in here");
+        })
+        .catch(error=>{
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: `${error.message}`,
+              });
+        })
     }
     return (
         <div className="w-[96%] mx-auto min-h-[86vh] mt-8 rounded-md
@@ -62,7 +76,7 @@ const Login = () => {
                  <div className="mt-5">
                       <h1 className="hr-lines text-center text-white text-xl font-semibold">
                         ------Login With------</h1>
-                        <button className="w-full h-[48px] rounded-md
+                        <button onClick={handleclicked} className="w-full h-[48px] rounded-md
                         border-2 border-white mt-5 flex justify-center items-center
                         space-x-3 bg-orange-400">
                             <FaGoogle className="text-2xl text-white"></FaGoogle>

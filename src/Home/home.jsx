@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from "./Banner";
-
+import con from '../assets/images/contect.jpeg'
 import Swipercom from "./Swiper";
 import Title from "./Title";
 import banner2 from '../assets/images/nature.jpg'
@@ -10,12 +10,22 @@ import save1 from '../assets/images/save1.avif'
 import save2 from '../assets/images/save6.avif'
 import save3 from '../assets/images/save5.avif'
 import bg from '../assets/images/gb2.avif'
+import bg3 from '../assets/images/bg3.jpg'
 import about from '../assets/images/about.jpeg'
 import team from '../assets/images/team.jpeg'
 import star from '../assets/images/star.png'
+import { FaAddressBook, FaEnvelope, FaPhone } from "react-icons/fa";
+import Review from "./Review";
+import review from '../assets/images/rev.jpg'
 const Home = () => {
     const bannerStyle = {
         backgroundImage: `url(${bg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+    };
+    const bannerStyle2 = {
+        backgroundImage: `url(${bg3})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -126,7 +136,7 @@ const Home = () => {
                     <div className="w-[350px]">
                         <h1 className="text-2xl font-semibold">20+ Awards</h1>
                         <p className="text-[17px] mt-2 font-medium"> An About Us page is a section on a website that provides information <br />
-                    about a company, organization, or individual</p>
+                            about a company, organization, or individual</p>
                     </div>
                     <div className="w-[350px]">
                         <h1 className="text-2xl font-semibold">96% Success </h1>
@@ -135,21 +145,84 @@ const Home = () => {
                             wear, use for entertainment, or abuse in any other way.</p>
                     </div>
                     <div className="w-full flex justify-center">
-                         <div className="w-[350px] flex space-x-2">
-                              <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
-                              <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
-                              <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
-                              <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
-                              <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
-                           
-                         </div>
+                        <div className="w-[350px] flex space-x-2">
+                            <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
+                            <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
+                            <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
+                            <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
+                            <img src={star} className="w-[35px] h-[35px]" alt="" srcset="" />
+
+                        </div>
                     </div>
                 </div>
             </div>
 
             <Title subheading={`Aided by thorough investigative work, consumer protests, and international ${<br></br>}  media coverage, PETA brings together members of the scientific, corporate, and legislative`}
-             heading={"Get In Touch"} banner2={`${banner}`}></Title>
-             <div className="w-[96%] mx-auto">
+                heading={"Get In Touch"} banner2={`${banner}`}></Title>
+            <div className="w-[96%] mx-auto">
+                <h1 className="text-3xl mb-12 text-center font-medium">
+                    Fill Your Identity
+                </h1>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <div className="w-[354px]">
+                        <input type="text" placeholder="Your Name" className="p-1 w-full border-2 border-black 
+                             rounded-md h-[48px]" name="" id="" />
+                        <input type="email" placeholder="Your Email" className="p-1 my-8 w-full border-2 border-black 
+                             rounded-md h-[48px]" name="" id="" />
+                        <input type="number" placeholder="Mobile Number" className="p-1 mb-8 w-full border-2 border-black 
+                             rounded-md h-[48px]" name="" id="" />
+                        <input type="number" placeholder="Address" className="p-1 mb-8 w-full border-2 border-black 
+                             rounded-md h-[48px]" name="" id="" />
+                    </div>
+                    <div>
+                        <img src={con} className="w-[350px] md:w-[420px] h-[330px]" alt="" srcset="" />
+                    </div>
+                </div>
+                <div className="w-full min-h-[42vh] flex flex-wrap gap-5
+                    justify-evenly mt-5 rounded-md py-5" style={bannerStyle2}>
+                    <div className="w-[340px] h-[260px] p-4 rounded-md shadow-xl bg-[#ffffff]">
+                         <FaEnvelope className=" mt-2 text-2xl"></FaEnvelope>
+                         <h1>Our email</h1>
+                          <h1>catropat@gmail.com</h1>
+                          <p className="font-medium mt-6">They explain why a visitor should 
+                            contact you and describe how you can
+                             help to solve your visitors' problems.</p>
+                    </div>
+                    <div className="w-[340px] h-[260px] rounded-md p-4 bg-[#ffffff]">
+                    <FaPhone className="text-2xl mt-2"></FaPhone>
+                    <h1>Our Phone</h1>
+                    
+                          <h1>018234..234</h1>
+                         <p className="mt-6 font-medium">They include an email and phone number
+                             so that the visitors 
+                             could quickly find the required information. </p>
+                    </div>
+                    <div className="w-[340px] h-[260px] p-4 rounded-md bg-[#ffffff]">
+                          <FaAddressBook className="text-2xl mt-2"></FaAddressBook>
+                          <h1>Our Address</h1>
+                    
+                    <h1>Chittagong/agrabad.11/9</h1>
+                   <p className="mt-6 font-medium">They include an email and phone number
+                       so that the visitors 
+                       could quickly find the required information. </p>
+                    </div>
+                </div>
+            </div>
+            <div className="w-[92%] mx-auto my-20 shadow-xl py-3">
+                <h1 className="text-3xl text-center font-semibold">Some Of Our User Say</h1>
+                <p className="text-center text-[17px] font-medium my-7">
+                    An About Us page is a section on a website that provides information <br />
+                    about a company, organization, or individual. It's an
+                    opportunity to tell your brand's story, share your <br />
+                    vision, introduce team members, <br />
+                    and outline your history, values, and achievements.
+                </p>
+
+            </div>
+             <div className="flex flex-col justify-center space-x-8 md:flex-row w-[96%] mx-auto">
+
+                  <img src={review} alt="" className="h-[370px] rounded-md" srcset="" />
+                  <Review></Review>
 
              </div>
         </div>
