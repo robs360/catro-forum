@@ -7,10 +7,11 @@ import { useContext } from 'react'
 import { AuthContext } from './Authprovider'
 import { getAuth, updateProfile } from 'firebase/auth'
 import app from './firebase.config'
+import Swal from 'sweetalert2'
 const Register = () => {
     const auth=getAuth(app)
     const {createUser}=useContext(AuthContext)
-    console.log(createUser)
+    
     const bannerStyle = {
         backgroundImage: `url(${banner2})`,
         backgroundSize: 'cover',
@@ -28,6 +29,7 @@ const Register = () => {
         createUser(Email,Password)
         .then(res=>{
             console.log(res)
+            Swal.fire("You are in here");
             updateProfile(auth.currentUser, {
                 displayName: Name, photoURL: photo
             }).then(() => {
@@ -38,7 +40,11 @@ const Register = () => {
             });
         })
         .catch(error=>{
-            console.log(error)
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: `${error.message}`,
+              });
         })
     }
     return (

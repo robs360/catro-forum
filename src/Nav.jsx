@@ -10,11 +10,11 @@ const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
     const [visit, setVisit] = useState(false)
     const [visible, setVisible] = useState(false);
-    console.log(user,'dsaf',logOut)
+   
     const handleclicked = () => {
         logOut()
             .then(res => {
-                console.log(res.user)
+               
                 setVisible(false)
                 toast('You have Successfully Logout')
             })
@@ -22,7 +22,7 @@ const Nav = () => {
     }
     return (
         <div className='w-full'>
-            <div className="w-[96%] mx-auto bg-black flex
+            <div className="w-[96%] mx-auto  bg-gradient-to-b from-orange-300 to-orange-600  flex
        items-center opacity-90 p-2 md:p-3 rounded-md justify-between">
                 <div>
                     <h1 className='flex text-white items-center text-xl
@@ -35,7 +35,7 @@ const Nav = () => {
                     <NavLink
                         to="/"
                         className={({ isActive, isPending }) =>
-                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : ""
+                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : "text-[18px]"
                         }
                     >
                         Home
@@ -44,7 +44,7 @@ const Nav = () => {
                     <NavLink
                         to="/patlist"
                         className={({ isActive, isPending }) =>
-                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : ""
+                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : "text-[18px]"
                         }
                     >
                         Pat Listing
@@ -52,7 +52,7 @@ const Nav = () => {
                     <NavLink
                         to="/donation"
                         className={({ isActive, isPending }) =>
-                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : ""
+                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : "text-[18px]"
                         }
                     >
                         Donation
@@ -60,7 +60,7 @@ const Nav = () => {
                     <NavLink
                         to="/reg"
                         className={({ isActive, isPending }) =>
-                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : ""
+                            isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : "text-[18px]"
                         }
                     >
                         Register
@@ -82,8 +82,8 @@ const Nav = () => {
                         }
                     </button>
                     {
-                        visit ? (<div className="flex flex-col menu">
-                            <ul className="flex flex-col gap-4">
+                        visit ? (<div className="flex flex-col menu z-50">
+                            <ul className="flex flex-col gap-4 z-50">
                                 <Link to={'/'}>
                                     <li>Home</li>
                                 </Link>
@@ -106,8 +106,8 @@ const Nav = () => {
                             }
                         }}>
 
-                            <img title={user?.displayName} data-tooltip-id="hello" src={user.photoURL} className="w-[40px]
-                         h-[40px] rounded-[50%]" alt="" />
+                            <img title={user?.displayName} data-tooltip-id="hello" src={user.photoURL} className="w-[36px]
+                         h-[36px] rounded-[50%]" alt="" />
                             <Tooltip id="hello" />
                         </button>) : (<Link to={'/log'}>
                             <button
@@ -127,7 +127,7 @@ const Nav = () => {
                     
                                 <button onClick={() => {
                                     handleclicked(); setVisible(false)
-                                }} className="text-black space-x-3 z-50 text-xl font-semibold 
+                                }} className="text-black z-50 space-x-3 z-50 text-xl font-semibold 
                      flex items-center">Logout
                                     <FaSignOutAlt className='text-xl ml-3 mt-1 
                                     text-red-500'></FaSignOutAlt>
