@@ -13,6 +13,7 @@
     border-radius: 10px;
     background-color: white;
     border: 1px solid gray;
+    z-index: 50;
 }
 .drp::before{
     content: '';
@@ -24,6 +25,7 @@
     transform: rotate(45deg);
     border-top: 1px solid gray;
     border-left: 1px solid gray;
+    z-index: 50;
 }
 .menu{
     position:absolute;

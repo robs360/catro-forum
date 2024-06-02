@@ -82,7 +82,7 @@ const Nav = () => {
                         }
                     </button>
                     {
-                        visit ? (<div className="flex flex-col menu z-50">
+                        visit ? (<div className="flex flex-col absolute menu z-50">
                             <ul className="flex flex-col gap-4 z-50">
                                 <Link to={'/'}>
                                     <li>Home</li>
@@ -118,8 +118,8 @@ const Nav = () => {
                     }
 
                     {
-                        visible ? (<div title={user.displayName} className="flex flex-col z-50">
-                            <ul className="flex flex-col gap-4 items-start drp">
+                        visible ? (<div title={user.displayName} className="flex flex-col">
+                            <ul className="flex flex-col gap-4 items-start absolute z-50 drp">
 
                                 <Link to={'/dash'}><button onClick={() => {
                                     setVisible(false)

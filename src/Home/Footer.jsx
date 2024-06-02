@@ -17,7 +17,7 @@ const currentDate = month + "/" + date + "/" + year;
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <a href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                         <img src={logo} className="rounded-[50%] w-[36px] h-[36px]" alt="Flowbite Logo" />
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Flowbite</span>
+                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">CatroPat</span>
                     </a>
                     <ul className="flex flex-wrap space-x-4 items-center mb-6 text-sm font-medium sm:mb-0 text-white">
                         <Link to={'/'}>
