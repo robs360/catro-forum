@@ -11,6 +11,8 @@ import Login from './Authentication/Login.jsx';
 import Register from './Authentication/Register.jsx';
 import AuthProvider from './Authentication/Authprovider.jsx';
 import Patlisting from './User/patlisting.jsx';
+import Private from './Authentication/Private.jsx';
+import Details from './User/Details.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +33,11 @@ const router = createBrowserRouter([
      {
       path:'/patlist',
       element:<Patlisting></Patlisting>
+     },
+     {
+      path:'/details/:id',
+      element:<Private><Details></Details></Private>,
+      loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
      }
     ]
   },

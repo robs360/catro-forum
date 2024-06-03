@@ -2,12 +2,14 @@ import React, { useContext } from "react";
 import login from '../assets/images/login-logo.png'
 import '../App.css'
 import { FaEnvelope, FaGithub, FaGithubAlt, FaGoogle, FaKey, FaUser, FaVoicemail } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Authprovider";
 import Swal from "sweetalert2";
 const Login = () => {
-    const {signIn,googleSignin,user}=useContext(AuthContext)
-    console.log(user)
+    const {signIn,googleSignin}=useContext(AuthContext)
+    
+    const location = useLocation()
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const Email = e.target.email.value;
@@ -16,6 +18,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user)
                 Swal.fire("You are in here");
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 

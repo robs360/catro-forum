@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Patlisting = () => {
     const [info, setInfo] = useState([])
@@ -36,7 +37,8 @@ const Patlisting = () => {
             <div className="flex w-[96%] mx-auto flex-col md:flex-row justify-center items-center gap-4 mt-10">
                 <div className="w-[150px] mx-auto rounded-md ">
                     <label htmlFor="options"></label>
-                    <select onChange={handeChanged} id="options" className="w-full rounded-md border-2 border-orange-400">
+                    <select  onChange={handeChanged} id="options"
+                     className="w-full rounded-md border-2 border-orange-400">
                         <option selected value="cat">Cat</option>
                         <option value="dog">Dog</option>
                         <option value="fish">Fish</option>
@@ -46,7 +48,7 @@ const Patlisting = () => {
                 </div>
                 <div className="w-[280px]">
                     <form onSubmit={handleSearch} action="">
-                        <input name="sea" type="text" className="w-[200px] h-[45px]
+                        <input placeholder="Search Here" name="sea" type="text" className="w-[200px] h-[45px]
                   rounded-l-2xl border-2 border-black" />
                         <button type="submit"  className="rounded-r-2xl
                    text-[18px] font-semibold p-1 bg-blue-400 
@@ -64,16 +66,19 @@ const Patlisting = () => {
                         </div>
                         <div>
                             <div className="flex space-x-5">
-                                <h1 className="text-[18px] font-semibold text-gray-400">Category:{item.category}</h1>
-                                <h1 className="text-[18px] font-semibold text-gray-400">Name:{item.name}</h1>
+                                <h1 className="text-[18px] font-semibold text-gray-500">Category:{item.category}</h1>
+                                <h1 className="text-[18px] font-semibold text-gray-500">Name:{item.name}</h1>
                             </div>
                             <div className="flex space-x-5 my-4">
-                                <h1 className="text-[18px] font-semibold text-gray-400">Age:{item.age}</h1>
-                                <h1 className="text-[18px] font-semibold text-gray-400">Title:{item.title}</h1>
+                                <h1 className="text-[18px] font-semibold text-gray-500">Age:{item.age}</h1>
+                                <h1 className="text-[18px] font-semibold text-gray-500">Title:{item.title}</h1>
                             </div>
-                            <div>
-                                <h1 className="text-[18px] font-semibold text-gray-400">Date:{item.date}</h1>
+                            <div className="flex space-x-4">
+                                <h1 className="text-[18px] font-semibold text-gray-500">Date:{item.date}</h1>
+                                <h1 className="text-[18px] font-semibold text-gray-500">{item.location}</h1>
                             </div>
+                           <Link to={`/details/${item._id}`}> <button className="italic text-xl bg-orange-400
+                            px-2 py-1  rounded-lg font-medium text-white mt-3">View Details</button></Link>
                         </div>
                     </div>)
                 }
