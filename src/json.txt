@@ -1,0 +1,82 @@
+[
+    {
+        "category": "cat",
+        "name": "Whiskers",
+        "image": "https://i.ibb.co/RSZp8jt/data1.jpg",
+        "age": 2,
+        "date": "2022-05-15",
+        "title": "Cuddly Cat"
+    },
+    {
+        "category": "cat",
+        "name": "Mittens",
+        "image": "https://i.ibb.co/mDgwNcL/data2.jpg",
+        "age": 4,
+        "date": "2021-12-10",
+        "title": "Playful Feline"
+    },
+    {
+        "category": "fish",
+        "name": "Goldie",
+        "image": "https://i.ibb.co/S0MxSSX/data11.jpg",
+        "age": 1,
+        "date": "2023-03-22",
+        "title": "Golden Fish"
+    },
+    {
+        "category": "fish",
+        "name": "Bubbles",
+        "image": "https://i.ibb.co/3W5jbYc/data12.jpg",
+        "age": 2,
+        "date": "2022-09-14",
+        "title": "Bubbly Fish"
+    },
+    {
+        "category": "rabbit",
+        "name": "Thumper",
+        "image": "https://i.ibb.co/JkSbggL/data10.jpg",
+        "age": 3,
+        "date": "2021-11-05",
+        "title": "Hoppy Rabbit"
+    },
+    {
+        "category": "rabbit",
+        "name": "Fluffy",
+        "image": "https://i.ibb.co/HBwVL7H/data9.jpg",
+        "age": 2,
+        "date": "2022-08-19",
+        "title": "Fluffy Bunny"
+    },
+    {
+        "category": "cat",
+        "name": "Shadow",
+        "image": "https://i.ibb.co/zxnVjw9/data4.jpg",
+        "age": 5,
+        "date": "2020-04-12",
+        "title": "Mysterious Cat"
+    },
+    {
+        "category": "fish",
+        "name": "Finny",
+        "image": "https://i.ibb.co/Vq32cgp/data14.webp",
+        "age": 3,
+        "date": "2021-06-30",
+        "title": "Swift Fish"
+    },
+    {
+        "category": "rabbit",
+        "name": "Snowball",
+        "image": "https://i.ibb.co/8DkdVFp/data7.jpg",
+        "age": 4,
+        "date": "2020-12-25",
+        "title": "White Rabbit"
+    },
+    {
+        "category": "cat",
+        "name": "Tiger",
+        "image": "https://i.ibb.co/vZRjHnq/data6.jpg",
+        "age": 3,
+        "date": "2022-07-11",
+        "title": "Brave Cat"
+    }
+]

@@ -10,6 +10,7 @@ import Home from './Home/home.jsx';
 import Login from './Authentication/Login.jsx';
 import Register from './Authentication/Register.jsx';
 import AuthProvider from './Authentication/Authprovider.jsx';
+import Patlisting from './User/patlisting.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
      {
       path:'/reg',
       element:<Register></Register>
+     },
+     {
+      path:'/patlist',
+      element:<Patlisting></Patlisting>
      }
     ]
   },
