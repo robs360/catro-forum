@@ -7,6 +7,8 @@ import sp2 from '../assets/images/special4.jpeg'
 import './modal.css'
 import { AuthContext } from "../Authentication/Authprovider";
 import { FaPlus } from "react-icons/fa";
+import axios from "axios";
+import Swal from "sweetalert2";
 const Details = () => {
     const singleData = useLoaderData()
     const {user}=useContext(AuthContext)
@@ -23,11 +25,23 @@ const Details = () => {
             petId:singleData._id, category:singleData.category,
             petName:singleData.name
         }
-        console.log(adoptInfo)
+       axios.post('http://localhost:5000/adopt',adoptInfo)
+       .then(res=>{
+        console.log(res.data)
+        if(res.data.insertedId){
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
+    })
     }
     return (
         <div className="w-[96%] mx-auto my-14">
-            <div className="p-2 py-4 bg-gray-300 flex-col md:flex-row rounded-md flex items-center justify-center">
+            <div className="p-3 py-4 bg-gray-300 flex-col md:flex-row rounded-md flex items-center justify-center">
                 <div>
                     <h1 className="text-[18px] font-medium italic">Help</h1>
                      <p className="text-[17px] font-medium">018348..23 Always Ready</p>
@@ -58,7 +72,7 @@ const Details = () => {
                 <div className="w-full md:w-[49%] ">
                     <div className="font-medium w-full text-gray-500">
                         <h1 className="text-3xl font-medium text-black mb-5">Descirption</h1>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quasi quo ut perspiciatis? Sequi, eligendi? Maiores iure quod vel impedit mollitia, numquam unde nam delectus beatae suscipit obcaecati, rerum labore error distinctio itaque illum saepe expedita minima, sunt ea aperiam tenetur est! Doloribus, minima neque.</div>
+                    {singleData.description}</div>
 
                     <div className="font-medium w-full text-gray-500">
                         <h1 className="text-3xl mt-6
