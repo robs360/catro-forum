@@ -4,7 +4,7 @@ import Nav from './Nav'
 import Footer from './Home/Footer'
 
 function App() {
-
+  
   return (
      <div>
       <Nav></Nav>

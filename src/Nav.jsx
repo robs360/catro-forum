@@ -21,7 +21,7 @@ const Nav = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='w-full'>
+        <div className='w-full mt-3'>
             <div className="w-[96%] mx-auto  bg-gradient-to-b from-orange-300 to-orange-600  flex
        items-center opacity-90 p-2 md:p-3 rounded-md justify-between">
                 <div>
@@ -127,7 +127,7 @@ const Nav = () => {
                     
                                 <button onClick={() => {
                                     handleclicked(); setVisible(false)
-                                }} className="text-black z-50 space-x-3 z-50 text-xl font-semibold 
+                                }} className="text-black space-x-3 z-50 text-xl font-semibold 
                      flex items-center">Logout
                                     <FaSignOutAlt className='text-xl ml-3 mt-1 
                                     text-red-500'></FaSignOutAlt>

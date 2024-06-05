@@ -8,6 +8,7 @@ import { AuthContext } from './Authprovider'
 import { getAuth, updateProfile } from 'firebase/auth'
 import app from './firebase.config'
 import Swal from 'sweetalert2'
+import axios from "axios";
 const Register = () => {
     const auth=getAuth(app)
     const {createUser}=useContext(AuthContext)
@@ -30,14 +31,22 @@ const Register = () => {
         .then(res=>{
             console.log(res)
             Swal.fire("You are in here");
-            updateProfile(auth.currentUser, {
-                displayName: Name, photoURL: photo
-            }).then(() => {
-                console.log('yes')
-                console.log()
-            }).catch((error) => {
-                console.log('No')
-            });
+            const userInfo={
+                name:Name,
+                email:res.user.email,
+            }
+            axios.post('http://localhost:5000/users',userInfo)
+            .then(res=>console.log(res.data))
+            updateProfile(auth.currentUser,{
+                displayName:Name,
+                photoURL:photo
+            })
+            .then(()=>{
+                console.log("Yes")
+            })
+            .catch((error)=>{
+                 console.log("no")
+            })
         })
         .catch(error=>{
             Swal.fire({

@@ -20,7 +20,7 @@ const Patlisting = () => {
         e.preventDefault()
         setDrop(e.target.value)
         console.log(drop)
-        setApi(false)
+       
     }
     const handleSearch = (e) => {
         e.preventDefault()
@@ -32,6 +32,7 @@ const Patlisting = () => {
                 setInfo(data)
             })
     }
+ 
     return (
         <div>
             <div className="flex w-[96%] mx-auto flex-col md:flex-row justify-center items-center gap-4 mt-10">
