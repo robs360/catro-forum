@@ -80,3 +80,81 @@
         "title": "Brave Cat"
     }
 ]
+
+
+ it is the data of campaign.
+
+[
+    {
+        "category": "cat",
+        "pet_image": "https://i.ibb.co/RSZp8jt/data1.jpg",
+        "maximum_donation": 500,
+        "last_date_of_donation": "2024-07-01",
+        "short_description": "Whiskers is a playful cat who loves to cuddle.",
+        "long_description": "Whiskers is an affectionate and playful cat who enjoys cuddling and exploring. He loves interacting with his human companions and other pets.",
+        "date": "2023-05-15"
+    },
+    {
+        "category": "cat",
+        "pet_image": "https://i.ibb.co/mDgwNcL/data2.jpg",
+        "maximum_donation": 300,
+        "last_date_of_donation": "2024-07-15",
+        "short_description": "Mittens is a curious feline with a love for adventure.",
+        "long_description": "Mittens is a curious cat with a love for adventure. She enjoys exploring new places and playing with toys, always ready for new experiences.",
+        "date": "2023-01-10"
+    },
+    {
+        "category": "fish",
+        "pet_image": "https://i.ibb.co/S0MxSSX/data11.jpg",
+        "maximum_donation": 200,
+        "last_date_of_donation": "2024-08-10",
+        "short_description": "Goldie is a beautiful fish with shimmering scales.",
+        "long_description": "Goldie is a stunning fish with shimmering golden scales. She adds a touch of beauty and tranquility to any aquarium, gracefully swimming around.",
+        "date": "2023-03-22"
+    },
+    {
+        "category": "fish",
+        "pet_image": "https://i.ibb.co/3W5jbYc/data12.jpg",
+        "maximum_donation": 150,
+        "last_date_of_donation": "2024-09-25",
+        "short_description": "Bubbles is an energetic fish who loves to swim.",
+        "long_description": "Bubbles is an energetic and lively fish who loves to swim around. She brings joy and movement to the aquarium, always active and playful.",
+        "date": "2023-06-14"
+    },
+    {
+        "category": "rabbit",
+        "pet_image": "https://i.ibb.co/8DkdVFp/data7.jpg",
+        "maximum_donation": 400,
+        "last_date_of_donation": "2024-12-05",
+        "short_description": "Thumper is a hoppy rabbit full of energy.",
+        "long_description": "Thumper is a lively and energetic rabbit who loves to hop around. He's very social and enjoys the company of people and other rabbits.",
+        "date": "2023-07-05"
+    },
+    {
+        "category": "rabbit",
+        "pet_image": "https://i.ibb.co/HBwVL7H/data9.jpg",
+        "maximum_donation": 350,
+        "last_date_of_donation": "2024-11-30",
+        "short_description": "Fluffy is a soft bunny with a gentle nature.",
+        "long_description": "Fluffy is a soft and gentle rabbit who loves to be petted. She is very friendly and enjoys spending time with her human companions.",
+        "date": "2023-08-19"
+    },
+    {
+        "category": "cat",
+        "pet_image": "https://i.ibb.co/vZRjHnq/data6.jpg",
+        "maximum_donation": 450,
+        "last_date_of_donation": "2023-10-20",
+        "short_description": "Shadow is a mysterious cat with a calm demeanor.",
+        "long_description": "Shadow is a calm and mysterious cat who enjoys quiet time. He loves observing his surroundings and occasionally playing with his favorite toys.",
+        "date": "2023-02-12"
+    },
+    {
+        "category": "fish",
+        "pet_image": "https://i.ibb.co/Vq32cgp/data14.webp",
+        "maximum_donation": 100,
+        "last_date_of_donation": "2024-07-15",
+        "short_description": "Finny is a swift fish who enjoys darting around.",
+        "long_description": "Finny is a swift and agile fish who loves to dart around the aquarium. He is very active and brings a lively atmosphere to his tank.",
+        "date": "2023-04-30"
+    }
+]

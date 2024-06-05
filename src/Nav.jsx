@@ -16,7 +16,7 @@ const Nav = () => {
             .then(res => {
                
                 setVisible(false)
-                toast('You have Successfully Logout')
+               
             })
             .catch(error => console.error(error))
     }
@@ -55,7 +55,7 @@ const Nav = () => {
                             isPending ? "text-white text-[18px] font-medium" : isActive ? "text-black text-[17px] rounded-md bg-white px-1 font-semibold" : "text-[18px]"
                         }
                     >
-                        Donation
+                        Donation Campaign
                     </NavLink>
                     <NavLink
                         to="/reg"

@@ -13,6 +13,9 @@ import AuthProvider from './Authentication/Authprovider.jsx';
 import Patlisting from './User/patlisting.jsx';
 import Private from './Authentication/Private.jsx';
 import Details from './User/Details.jsx';
+import Donationcamp from './User/Donatoncamp.jsx';
+import Detailsdonation from './User/Detailsdonation.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,9 +38,18 @@ const router = createBrowserRouter([
       element:<Patlisting></Patlisting>
      },
      {
+      path:'/donation',
+      element:<Donationcamp></Donationcamp>
+     },
+     {
       path:'/details/:id',
       element:<Private><Details></Details></Private>,
       loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
+     },
+     {
+      path:'/donation/details/:id',
+      element:<Private><Detailsdonation></Detailsdonation></Private>,
+      loader:({params})=>fetch(`http://localhost:5000/campaign/${params.id}`)
      }
     ]
   },
