@@ -41,8 +41,10 @@ const AddPet = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
-                
+                console.log("success ",data.data.url)
+               setImage(data.data.url)
+               console.log(image)
+               console.log("obj is ",info)
             })
 
     }
