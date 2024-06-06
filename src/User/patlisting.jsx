@@ -72,7 +72,8 @@ const Patlisting = () => {
                             </div>
                             <div className="flex space-x-5 my-4">
                                 <h1 className="text-[18px] font-semibold text-gray-500">Age:{item.age}</h1>
-                                <h1 className="text-[18px] font-semibold text-gray-500">Title:{item.title.slice(0,15)}</h1>
+                                <h1 className="text-[18px] font-semibold text-gray-500">Title: {(item?.title).slice(0, 15)}</h1>
+
                             </div>
                             <div className="flex space-x-4">
                                 <h1 className="text-[18px] font-semibold text-gray-500">Date:{item.date}</h1>

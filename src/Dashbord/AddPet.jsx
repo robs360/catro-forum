@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authentication/Authprovider";
+import { useNavigate } from "react-router-dom";
 
 const AddPet = () => {
     const { user } = useContext(AuthContext)
@@ -7,19 +8,38 @@ const AddPet = () => {
     const [short, setDes] = useState('')
     const [selectedFile, setSelectedFile] = useState(null);
     const [image,setImage]=useState('');
+    const navigate=useNavigate();
+    useEffect(()=>{
+        fetch('http://localhost:5000/pet',{
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
+            }
+        })
+        .then(res=>{
+            if(!res.ok){
+                
+                navigate('/log')
+            }
+            else{
+                return res.json()
+            }
+        })
+        .then(data=>console.log(data))
+    },[])
     const handleSubmit = (e) => {
         e.preventDefault();
-        const petName = e.target.petName.value;
-        const petCategory = select;
-        const petAge = e.target.petAge.value
+        const name = e.target.petName.value;
+        const category = select;
+        const age = e.target.petAge.value
         const date = e.target.date.value;
-        const shortDes = short;
-        const des = e.target.des.value;
-        const userEmail = e.target.userEmail.value;
+        const title = short;
+        const description = e.target.des.value;
+        const email = e.target.userEmail.value;
         const location = e.target.location.value;
         
         const info = {
-            petName, petCategory, petAge, date, shortDes, des, userEmail,
+            name, category, age, date, title, description, email,
             location,image
         }
 
@@ -43,8 +63,15 @@ const AddPet = () => {
             .then(data => {
                 console.log("success ",data.data.url)
                setImage(data.data.url)
-               console.log(image)
-               console.log("obj is ",info)
+               fetch('http://localhost:5000/addpet',{
+                  method:'POST',
+                  headers:{
+                    'content-type':'application/json',
+                  },
+                  body:JSON.stringify(info)
+               })
+               .then(res=>res.json())
+               .then(data=>console.log(data))
             })
 
     }

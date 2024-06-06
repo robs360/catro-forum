@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { FaHome, FaPlus } from "react-icons/fa";
 const Dashboard = () => {
-
+    const navigate=useNavigate();
+    useEffect(()=>{
+        fetch('http://localhost:5000/pet',{
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
+            }
+        })
+        .then(res=>{
+            if(!res.ok){
+                
+                navigate('/log')
+            }
+            else{
+                return res.json()
+            }
+        })
+        .then(data=>console.log(data))
+    },[])
     return (
         <div className="w-[96%] mx-auto mb-14 flex justify-between items-center gap-5 mt-5">
             <div className="md:w-[270px] p-3 rounded-md bg-orange-400 shadow-2xl min-h-[80vh]">
