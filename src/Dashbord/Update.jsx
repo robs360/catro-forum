@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import banner2 from '../assets/images/update.webp'
 import Swal from "sweetalert2";
 const Update = () => {
     const [short, setDes] = useState('')
     const singleData = useLoaderData()
     console.log(singleData)
+    const navigate=useNavigate()
     const bannerStyle = {
         backgroundImage: `url(${banner2})`,
         backgroundSize: 'cover',
@@ -34,10 +35,16 @@ const Update = () => {
             method:'PUT',
             headers:{
                 'content-type':'application/json',
+                'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
             },
             body:JSON.stringify(info)
         })
-        .then(res=>res.json())
+        .then(res=>{
+            if(!res.ok){
+                navigate('/log')
+                return
+            }
+            res.json()})
         .then(data=>{
             Swal.fire("Updated Successfully");
         })

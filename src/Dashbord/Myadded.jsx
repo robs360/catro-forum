@@ -35,8 +35,55 @@ const MyAdded = () => {
 
 
     const handleAdopted = (id) => {
-        
-        console.log('Adopted ID:', id);
+        Swal.fire({
+            title: "Are you sure to Adopt it?",
+            
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Adopt it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/update/status/${id}`,{
+                    method:'PATCH',
+                    headers:{
+                        'content-type':'application/json'
+                    },
+                    
+                })
+                .then(res=>res.json())
+                .then(data=>{
+                    console.log(data)
+
+                    fetch('http://localhost:5000/pet', {
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
+            }
+        })
+            .then(res => {
+                if (!res.ok) {
+                    navigate('/log');
+                } else {
+                    return res.json();
+                }
+            })
+            .then(data => {
+                
+                const filterData=data.filter(item=>item.email===user?.email)
+                setData(filterData)
+               
+            });
+                    Swal.fire({
+                        title: "Adopted",   
+                        icon: "success"
+                      });
+
+                    
+                })
+             
+            }
+          });
     };
     
     const handleDelete=(id)=>{
@@ -88,6 +135,8 @@ const MyAdded = () => {
           });
        
     }
+
+    
     const columns = [
         {
             header: 'Serial',

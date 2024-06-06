@@ -19,6 +19,7 @@ import Dashboard from './Dashbord/Dashboard.jsx';
 import AddPet from './Dashbord/AddPet.jsx';
 import Myadded from './Dashbord/Myadded.jsx';
 import Update from './Dashbord/Update.jsx';
+import Createcampaign from './Dashbord/CreateCampaign.jsx';
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
           path:'/dash/update/:id',
           element:<Private><Update></Update></Private>,
           loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
+         },
+         {
+           path:'/dash/createcamp',
+           element:<Private><Createcampaign></Createcampaign></Private>
          }
       ]
      },
