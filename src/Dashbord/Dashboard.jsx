@@ -20,10 +20,10 @@ const Dashboard = () => {
                 return res.json()
             }
         })
-        .then(data=>console.log(data))
+        .then(data=>console.log('as'))
     },[])
     return (
-        <div className="w-[96%] mx-auto mb-14 flex justify-between items-center gap-5 mt-5">
+        <div className="w-[96%] mx-auto mb-14 flex justify-between gap-5 mt-5">
             <div className="md:w-[270px] p-3 rounded-md bg-orange-400 shadow-2xl min-h-[80vh]">
                 <li className="my-1  text-[19px] font-medium list-none mx-auto p-1 items-center">
 
@@ -35,7 +35,7 @@ const Dashboard = () => {
                         Add a pet</NavLink></li>
                 <li className="my-1  text-[19px] mt-4 font-medium list-none mx-auto p-1 items-center">
 
-                    <NavLink to="/dah/myadded_pet"
+                    <NavLink to="/dash/myadded_pet"
                         className={({ isActive, isPending }) =>
                             isPending ? "flex items-center" : isActive ? "bg-gray-400 flex p-1 items-center rounded-md" : "flex items-center"
                         }>

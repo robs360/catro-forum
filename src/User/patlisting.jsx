@@ -67,17 +67,17 @@ const Patlisting = () => {
                         </div>
                         <div>
                             <div className="flex space-x-5">
-                                <h1 className="text-[18px] font-semibold text-gray-500">Category:{item.category}</h1>
-                                <h1 className="text-[18px] font-semibold text-gray-500">Name:{item.name}</h1>
+                                <h1 className="text-[17px] font-semibold text-gray-500">Category:{item.category}</h1>
+                                <h1 className="text-[17px] font-semibold text-gray-500">Name:{item.name}</h1>
                             </div>
                             <div className="flex space-x-5 my-4">
-                                <h1 className="text-[18px] font-semibold text-gray-500">Age:{item.age}</h1>
-                                <h1 className="text-[18px] font-semibold text-gray-500">Title: {(item?.title).slice(0, 15)}</h1>
+                                <h1 className="text-[17px] font-semibold text-gray-500">Age:{item.age}</h1>
+                                <h1 className="text-[17px] font-semibold text-gray-500">Title: {(item?.title).slice(0, 15)}</h1>
 
                             </div>
                             <div className="flex space-x-4">
-                                <h1 className="text-[18px] font-semibold text-gray-500">Date:{item.date}</h1>
-                                <h1 className="text-[18px] font-semibold text-gray-500">{item.location}</h1>
+                                <h1 className="text-[17px] font-semibold text-gray-500">Date:{item.date}</h1>
+                                <h1 className="text-[17px] font-semibold text-gray-500">{item.location}</h1>
                             </div>
                            <Link to={`/details/${item._id}`}> <button className="italic text-xl bg-orange-400
                             px-2 py-1  rounded-lg font-medium text-white mt-5">View Details</button></Link>

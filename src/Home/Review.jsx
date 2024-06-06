@@ -8,7 +8,7 @@ import user4 from '../assets/images/user5.avif'
 const Review=()=>{
    
     return(
-        <Carousel autoPlay={true} infiniteLoop={true} interval={2000}  className="md:w-[500px] mb-16">
+        <Carousel autoPlay={true} infiniteLoop={true} interval={2000}  className="w-[350px] md:w-[360px] mb-16">
         <div className="w-[330px] rounded-md p-2 bg-[#ffffff] shadow-xl">
               <div className="">
                    <img src={user1} alt="" srcset="" />

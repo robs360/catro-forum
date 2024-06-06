@@ -17,6 +17,8 @@ import Donationcamp from './User/Donatoncamp.jsx';
 import Detailsdonation from './User/Detailsdonation.jsx';
 import Dashboard from './Dashbord/Dashboard.jsx';
 import AddPet from './Dashbord/AddPet.jsx';
+import Myadded from './Dashbord/Myadded.jsx';
+import Update from './Dashbord/Update.jsx';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +64,15 @@ const router = createBrowserRouter([
          {
            index:true,
            element:<Private><AddPet></AddPet></Private>
+         },
+         {
+          path:'/dash/myadded_pet',
+          element:<Private><Myadded></Myadded></Private>
+         },
+         {
+          path:'/dash/update/:id',
+          element:<Private><Update></Update></Private>,
+          loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
          }
       ]
      },

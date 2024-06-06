@@ -38,10 +38,7 @@ const AddPet = () => {
         const email = e.target.userEmail.value;
         const location = e.target.location.value;
         
-        const info = {
-            name, category, age, date, title, description, email,
-            location,image
-        }
+ 
 
         
         
@@ -62,7 +59,14 @@ const AddPet = () => {
             .then(response => response.json())
             .then(data => {
                 console.log("success ",data.data.url)
+              
                setImage(data.data.url)
+               const info = {
+                name, category, age, date, title, description, email,
+                location,image
+               }
+               console.log(info)
+               
                fetch('http://localhost:5000/addpet',{
                   method:'POST',
                   headers:{

@@ -4,9 +4,9 @@ import { AuthContext } from "./Authprovider";
 
 const Private=({children})=>{
     const location=useLocation();
-    console.log(location)
+    
     const {user,loading}=useContext(AuthContext);
-     console.log(loading)
+    
     if(loading){
         return <p className="text-[18px] flex items-center
          font-semibold justify-center">loading <span className="loading loading-dots loading-md"></span></p>

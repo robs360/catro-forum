@@ -221,7 +221,7 @@ const Home = () => {
             </div>
              <div className="flex flex-col justify-center space-x-8 md:flex-row w-[96%] mx-auto">
 
-                  <img src={review} alt="" className="h-[370px] rounded-md" srcset="" />
+                  <img src={review} alt="" className="h-[350px] w-[355px] md:w-[380px] rounded-md" srcset="" />
                   <Review></Review>
 
              </div>
