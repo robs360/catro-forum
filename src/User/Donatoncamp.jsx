@@ -27,9 +27,9 @@ const Donationcamp=()=>{
                 </p>
 
             </div>
-            <div className="w-full min-h-[50vh] gap-7 p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={bannerStyle}>
+            <div className="w-full min-h-[50vh] gap-7 p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    info?.map(item=><div className="w-[356px] flex flex-col
+                    info?.map(item=><div className="w-[356px] shadow-2xl flex flex-col
                     mx-auto rounded-md p-2 bg-[#ffffff80]">
                             <img src={item.pet_image} className="w-full 
                             rounded-md h-[330px]" alt="" srcset="" />

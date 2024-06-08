@@ -60,22 +60,24 @@ const AddPet = () => {
             .then(data => {
                 console.log("success ",data.data.url)
               
-               setImage(data.data.url)
-               const info = {
-                name, category, age, date, title, description, email,
-                location,image
-               }
-               console.log(info)
-               
-               fetch('http://localhost:5000/addpet',{
-                  method:'POST',
-                  headers:{
-                    'content-type':'application/json',
-                  },
-                  body:JSON.stringify(info)
-               })
-               .then(res=>res.json())
-               .then(data=>console.log(data))
+                if(data.success){
+                    setImage(data.data.url)
+                    const info = {
+                     name, category, age, date, title, description, email,
+                     location,image
+                    }
+                    console.log(info)
+                    
+                    fetch('http://localhost:5000/addpet',{
+                       method:'POST',
+                       headers:{
+                         'content-type':'application/json',
+                       },
+                       body:JSON.stringify(info)
+                    })
+                    .then(res=>res.json())
+                    .then(data=>console.log(data))
+                }
             })
 
     }

@@ -20,6 +20,10 @@ import AddPet from './Dashbord/AddPet.jsx';
 import Myadded from './Dashbord/Myadded.jsx';
 import Update from './Dashbord/Update.jsx';
 import Createcampaign from './Dashbord/CreateCampaign.jsx';
+import MyCampaign from './Dashbord/MyCampaign.jsx';
+import UpdateCampaign from './Dashbord/UpdateCampaign.jsx';
+import MyDonation from './Dashbord/MyDonation.jsx';
+import AdoptionREQ from './Dashbord/AdoptionREQ.jsx';
 
 const router = createBrowserRouter([
   {
@@ -78,6 +82,23 @@ const router = createBrowserRouter([
          {
            path:'/dash/createcamp',
            element:<Private><Createcampaign></Createcampaign></Private>
+         },
+         {
+          path:'/dash/mycamp',
+          element:<Private><MyCampaign></MyCampaign></Private>
+         },
+         {
+          path:'/dash/updatecamp/:id',
+          element:<Private><UpdateCampaign></UpdateCampaign></Private>,
+          loader:({params})=>fetch(`http://localhost:5000/campaign/${params.id}`)
+         },
+         {
+          path:'/dash/mydonation',
+          element:<Private><MyDonation></MyDonation></Private>
+         },
+         {
+          path:'/dash/adoptionreq',
+          element:<Private><AdoptionREQ></AdoptionREQ></Private>
          }
       ]
      },

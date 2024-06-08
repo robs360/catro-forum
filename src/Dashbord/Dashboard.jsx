@@ -59,12 +59,12 @@ const Dashboard = () => {
                         My Donation Campaign</NavLink></li>
                 <li className="my-1  text-[19px] mt-4 font-medium list-none mx-auto p-1 items-center">
 
-                    <NavLink to="/dash/adopreq"
+                    <NavLink to="/dash/adoptionreq"
                         className={({ isActive, isPending }) =>
                             isPending ? "flex items-center" : isActive ? "bg-gray-400 flex p-1 items-center rounded-md" : "flex items-center"
                         }>
                         <FaPlus className="mr-2"></FaPlus>
-                        My Adopttion request</NavLink></li>
+                        Adopttion request</NavLink></li>
                 <li className="my-1  text-[19px] mt-4 font-medium list-none mx-auto p-1 items-center">
 
                     <NavLink to="/dash/mydonation"

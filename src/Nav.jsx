@@ -21,8 +21,9 @@ const Nav = () => {
             .catch(error => console.error(error))
     }
     return (
+        // 
         <div className='w-full mt-3'>
-            <div className="w-[96%] mx-auto  bg-gradient-to-b from-orange-300 to-orange-600  flex
+            <div className="w-[96%] mx-auto bg-gradient-to-b from-orange-300 to-orange-600  flex
        items-center opacity-90 p-2 md:p-3 rounded-md justify-between">
                 <div>
                     <h1 className='flex text-white items-center text-xl
@@ -119,7 +120,7 @@ const Nav = () => {
 
                     {
                         visible ? (<div title={user.displayName} className="flex flex-col">
-                            <ul className="flex flex-col gap-4 items-start absolute z-50 drp">
+                            <ul className="flex flex-col gap-4 items-start absolute z-50 drp top-20">
 
                                 <Link to={'/dash'}><button onClick={() => {
                                     setVisible(false)

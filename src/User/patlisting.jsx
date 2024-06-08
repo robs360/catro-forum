@@ -79,7 +79,7 @@ const Patlisting = () => {
                                 <h1 className="text-[17px] font-semibold text-gray-500">Date:{item.date}</h1>
                                 <h1 className="text-[17px] font-semibold text-gray-500">{item.location}</h1>
                             </div>
-                           <Link to={`/details/${item._id}`}> <button className="italic text-xl bg-orange-400
+                           <Link to={`/details/${item._id}`}> <button className="w-[200px] text-xl bg-black
                             px-2 py-1  rounded-lg font-medium text-white mt-5">View Details</button></Link>
                         </div>
                     </div>)

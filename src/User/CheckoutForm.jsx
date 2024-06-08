@@ -2,8 +2,10 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authentication/Authprovider";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm=({singleData})=>{
+    const navi=useNavigate()
     const {user}=useContext(AuthContext)
     const [error,setError]=useState('')
     const [clientSecret, setClientsecret] = useState('');
@@ -82,9 +84,32 @@ const CheckoutForm=({singleData})=>{
                     }
                   });
             }
+            const information={
+                amount:singleData.maximum_donation,
+                author:singleData.email,
+                donator:user?.email,
+                image:singleData.pet_image,
+                pet_name:singleData.category
+            }
+            fetch('http://localhost:5000/donators',{
+                method:'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
+                },
+                body:JSON.stringify(information)
+            })
+            .then(res=>{
+                if(!res.ok){
+                    navi('/log')
+                }
+                else{
+                    return res.json()
+                }
+            })
+            .then(data=>console.log(data))
         }
     }
-
     return(
         <form onSubmit={handleSubmit}>
               <CardElement
