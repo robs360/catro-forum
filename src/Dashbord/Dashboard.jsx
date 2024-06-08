@@ -118,6 +118,22 @@ const Dashboard = () => {
                                     }>
                                     <FaUserShield className="mr-2"></FaUserShield>
                                     All User</NavLink></li>
+                                    <li className="my-1  text-[19px] mt-4 font-medium list-none mx-auto p-1 items-center">
+
+                                <NavLink to="/dash/admin/allpet"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "flex items-center" : isActive ? "bg-gray-400 flex p-1 items-center rounded-md" : "flex items-center"
+                                    }>
+                                    <FaUserShield className="mr-2"></FaUserShield>
+                                    All Pet</NavLink></li>
+                                    <li className="my-1  text-[19px] mt-4 font-medium list-none mx-auto p-1 items-center">
+
+                                <NavLink to="/dash/admin/donation"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "flex items-center" : isActive ? "bg-gray-400 flex p-1 items-center rounded-md" : "flex items-center"
+                                    }>
+                                    <FaUserShield className="mr-2"></FaUserShield>
+                                    All Donation</NavLink></li>
                         </div>
                     )
                 }

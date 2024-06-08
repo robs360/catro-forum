@@ -25,6 +25,9 @@ import UpdateCampaign from './Dashbord/UpdateCampaign.jsx';
 import MyDonation from './Dashbord/MyDonation.jsx';
 import AdoptionREQ from './Dashbord/AdoptionREQ.jsx';
 import AllUser from './Admin/AllUser.jsx';
+import AllPet from './Admin/AllPet.jsx';
+import PetUpdate from './Admin/Petupdate.jsx';
+import AllDonation from './Admin/AllDonation.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,7 +48,7 @@ const router = createBrowserRouter([
      },
      {
       path:'/patlist',
-      element:<Private><Patlisting></Patlisting></Private>
+      element:<Patlisting></Patlisting>
      },
      {
       path:'/donation',
@@ -104,6 +107,19 @@ const router = createBrowserRouter([
          {
           path:'/dash/admin/alluser',
           element:<Private><AllUser></AllUser></Private>
+         },
+         {
+          path:'/dash/admin/allpet',
+          element:<Private><AllPet></AllPet></Private>
+         },
+         {
+           path:'/dash/admin/petupdate/:id',
+           element:<Private><PetUpdate></PetUpdate></Private>,
+           loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
+         },
+         {
+           path:'/dash/admin/donation',
+           element:<Private><AllDonation></AllDonation></Private>
          }
       ]
      },
