@@ -60,7 +60,7 @@ const Patlisting = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-14">
                 {
                     info?.map(item => <div className="flex shadow-xl 
-                rounded-md p-1 flex-col md:flex-row gap-4 mx-auto
+                rounded-md p-1 flex-col md:flex-row gap-4 mx-auto  border-gray-400 border-[1px]
                 w-[365px] md:w-[500px] bg-[#ffffff] justify-between items-center">
                         <div>
                             <img src={item.image} className="w-[270px] h-[240px] md:w-[230px] md:h-[200px] rounded-md" alt="" srcset="" />

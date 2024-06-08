@@ -45,7 +45,7 @@ const router = createBrowserRouter([
      },
      {
       path:'/patlist',
-      element:<Patlisting></Patlisting>
+      element:<Private><Patlisting></Patlisting></Private>
      },
      {
       path:'/donation',
