@@ -24,6 +24,7 @@ import MyCampaign from './Dashbord/MyCampaign.jsx';
 import UpdateCampaign from './Dashbord/UpdateCampaign.jsx';
 import MyDonation from './Dashbord/MyDonation.jsx';
 import AdoptionREQ from './Dashbord/AdoptionREQ.jsx';
+import AllUser from './Admin/AllUser.jsx';
 
 const router = createBrowserRouter([
   {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
          {
           path:'/dash/adoptionreq',
           element:<Private><AdoptionREQ></AdoptionREQ></Private>
+         },
+         {
+          path:'/dash/admin/alluser',
+          element:<Private><AllUser></AllUser></Private>
          }
       ]
      },
