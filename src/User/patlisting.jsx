@@ -65,6 +65,7 @@ const Patlisting = () => {
                         <div>
                             <img src={item.image} className="w-[270px] h-[240px] md:w-[230px] md:h-[200px] rounded-md" alt="" srcset="" />
                         </div>
+                        
                         <div>
                             <div className="flex space-x-5">
                                 <h1 className="text-[17px] font-semibold text-gray-500">Category:{item.category}</h1>

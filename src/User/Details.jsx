@@ -75,7 +75,7 @@ const Details = () => {
                 <div className="w-full md:w-[49%] ">
                     <div className="font-medium w-full text-gray-500">
                         <h1 className="text-3xl font-medium text-black mb-5">Descirption</h1>
-                        {singleData.description}</div>
+                        <div dangerouslySetInnerHTML={{ __html:singleData.value1 }} /></div>
 
                     <div className="font-medium w-full text-gray-500">
                         <h1 className="text-3xl mt-6

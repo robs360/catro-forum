@@ -2,12 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authentication/Authprovider";
 import { useNavigate } from "react-router-dom";
 
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 const AddPet = () => {
     const { user } = useContext(AuthContext)
     const [select, setSelect] = useState('cat')
     const [short, setDes] = useState('')
     const [selectedFile, setSelectedFile] = useState(null);
     const [image,setImage]=useState('');
+    const [value1, setValue] = useState('');
     const navigate=useNavigate();
     useEffect(()=>{
         fetch('http://localhost:5000/pet',{
@@ -34,12 +37,9 @@ const AddPet = () => {
         const age = e.target.petAge.value
         const date = e.target.date.value;
         const title = short;
-        const description = e.target.des.value;
+      
         const email = e.target.userEmail.value;
         const location = e.target.location.value;
-        
- 
-
         
         
         if (!selectedFile) {
@@ -59,12 +59,13 @@ const AddPet = () => {
             .then(response => response.json())
             .then(data => {
                 console.log("success ",data.data.url)
-              
-                if(data.success){
+                
+                if(data.data.url){
                     setImage(data.data.url)
+                    const imageUrl=data.data.url;
                     const info = {
-                     name, category, age, date, title, description, email,
-                     location,image
+                     name, category, age, date, title, value1, email,
+                     location,image:imageUrl
                     }
                     console.log(info)
                     
@@ -102,6 +103,7 @@ const AddPet = () => {
                             <h1 className="text-[18px] font-medium mr-2">Email:</h1>
                             <input type="text" name="userEmail" value={`${user?.email}`} className="w-[200px] h-[40px] rounded-md border-2 border-black" />
                         </div>
+                       
                         <div>
                             <h1 className="text-[18px] font-medium mr-2">Pet Category:</h1>
                             <div className="w-[200px] rounded-md ">
@@ -136,10 +138,7 @@ const AddPet = () => {
                                 setDes(e.target.value)
                             }} name="shortDes" className="w-[200px] h-[40px] rounded-md border-2 border-black" />
                         </div>
-                        <div>
-                            <h1 className="text-[18px] font-medium mr-2">Description:</h1>
-                            <input type="text" name="des" className="w-[200px] h-[40px] rounded-md border-2 border-black" />
-                        </div>
+                        
                         <div>
                             <h1 className="text-[18px] font-medium mr-2">Upload Image:</h1>
                             <input onChange={(e) => {
@@ -148,6 +147,10 @@ const AddPet = () => {
                             }} type="file" name="image" className="w-[200px] h-[40px] rounded-md border-2 border-black" />
                         </div>
 
+                    </div>
+                    <div>
+                    <h1 className="text-[18px] font-medium mr-2">Description:</h1>
+                    <ReactQuill  theme="snow" name='try' value={value1} onChange={setValue} />
                     </div>
                     <div className="w-[230px] mx-auto mt-8">
                         <button className="text-xl p-2 rounded-md

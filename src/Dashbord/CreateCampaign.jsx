@@ -32,11 +32,12 @@ const Createcampaign = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log("success ",data.data.url)  
-            if (data.success){
+            if (data.data.url){
                 setImage(data.data.url)
+                const imageUrl=data.data.url
             const info={
                 email,category,maximum_donation,last_date_of_donation,
-                short_description,long_description,date,status,image
+                short_description,long_description,date,status,image:imageUrl
             }
             console.log(info)
             fetch('http://localhost:5000/createcamp',{

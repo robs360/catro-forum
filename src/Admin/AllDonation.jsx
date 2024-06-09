@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 const AllDonation=()=>{
     const [info,setInfo]=useState([])
     const navigate=useNavigate()
+    const [vari,setVari]=useState(1)
     useEffect(()=>{
          fetch('http://localhost:5000/protected_campaign',{
             headers: {
@@ -27,7 +28,7 @@ const AllDonation=()=>{
             console.log(data)
             setInfo(data)
         })
-    },[])
+    },[vari])
     const handleDelete=(id)=>{
         Swal.fire({
             title: "Are you sure?",      
@@ -56,9 +57,61 @@ const AllDonation=()=>{
                 text: "Your file has been deleted.",
                 icon: "success"
               });
+             
             }
           });
       
+    }
+    const handleStatus=(id)=>{
+        fetch(`http://localhost:5000/update/campaign/status/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
+            }
+        })
+        .then(res=>{
+            if(!res.ok){
+                navigate('/log')
+            }
+            else{
+                return res.json()
+            }
+        })
+        .then(data=>{
+            if(data.acknowledged){
+                fetch(`http://localhost:5000/campaign/${id}`)
+                .then(res=>res.json())
+                .then(num=>{           
+                    if(num.status==='unpause'){
+                        Swal.fire("Donation is open now");
+                    }
+                    else{
+                        Swal.fire("Donation is close now");
+                    }
+                    fetch('http://localhost:5000/protected_campaign',{
+                        headers: {
+                            'content-type': 'application/json',
+                            'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
+                        }
+                     })
+                     .then(res => {
+                        if (!res.ok) {
+            
+                            navigate('/log')
+                        }
+                        else {
+                            return res.json()
+                        }
+                    })
+                    .then(data=>{
+                        console.log(data)
+                        setInfo(data)
+                    })
+                })
+            }
+            console.log(data)
+        })
     }
     return(
         <div>
@@ -89,11 +142,13 @@ const AllDonation=()=>{
                         <th>{item.category}</th>
                         <th>{item.maximum_donation}</th>
                         <th>
-                           <button>
+                           <button onClick={()=>{
+                              handleStatus(item._id)
+                           }}>
                            { 
                                item.status==='unpause'?(<div>
                                   <img src={unpause} className="w-[25px] h-[25px] my-1 block mx-auto" alt="" srcset="" />
-                               </div>):(<img src={pause} className="w-[30px] my-1 h-[30px] block mx-auto" alt="" srcset="" />)
+                               </div>):(<img src={pause} className="w-[25px] my-1 h-[25px] block mx-auto" alt="" srcset="" />)
                             }
                            </button>
                         </th>

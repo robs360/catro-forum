@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { FaHome, FaPlus, FaUserShield } from "react-icons/fa";
 import { AuthContext } from "../Authentication/Authprovider";
-import banner2 from '../assets/images/dash.jpg'
+import banner2 from '../assets/images/ban2.avif'
 const Dashboard = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext)
