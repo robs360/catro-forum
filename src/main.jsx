@@ -28,6 +28,7 @@ import AllUser from './Admin/AllUser.jsx';
 import AllPet from './Admin/AllPet.jsx';
 import PetUpdate from './Admin/Petupdate.jsx';
 import AllDonation from './Admin/AllDonation.jsx';
+import CampaignUpdate from './Admin/CampaignUpdate.jsx';
 
 const router = createBrowserRouter([
   {
@@ -120,6 +121,11 @@ const router = createBrowserRouter([
          {
            path:'/dash/admin/donation',
            element:<Private><AllDonation></AllDonation></Private>
+         },
+         {
+          path:'/dash/admin/campupdate/:id',
+          element:<Private><CampaignUpdate></CampaignUpdate></Private>,
+          loader:({params})=>fetch(`http://localhost:5000/campaign/${params.id}`)
          }
       ]
      },
