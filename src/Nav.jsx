@@ -1,25 +1,35 @@
 
 import { Link, NavLink } from 'react-router-dom'
 import logo from './assets/images/logo.jpeg'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './Authentication/Authprovider'
-import { FaBars, FaPlus, FaSignOutAlt } from 'react-icons/fa'
+import { FaBars, FaMoon, FaPlus, FaSignOutAlt, FaSun } from 'react-icons/fa'
 import './App.css'
 import { Tooltip } from 'react-tooltip'
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
     const [visit, setVisit] = useState(false)
     const [visible, setVisible] = useState(false);
-   
+    const [isChecked, setIsChecked] = useState(false);
+    useEffect(() => {
+        if (isChecked) {
+            document.body.style.backgroundColor = 'gray';
+        } else {
+            document.body.style.backgroundColor = 'white';
+        }
+    }, [isChecked]);
     const handleclicked = () => {
         logOut()
             .then(res => {
-               
+
                 setVisible(false)
-               
+
             })
             .catch(error => console.error(error))
     }
+    const handleCheckboxChange = (event) => {
+        setIsChecked(event.target.checked);
+    };
     return (
         // 
         <div className='w-full mt-3'>
@@ -66,6 +76,15 @@ const Nav = () => {
                     >
                         Register
                     </NavLink>
+                    <label className='flex items-center space-x-2'>
+                        <FaSun></FaSun>
+                        <input className='rounded-[50%]'
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={handleCheckboxChange}
+                        />
+                        <FaMoon></FaMoon>
+                    </label>
                 </div>
                 <div className="flex md:hidden">
                     <button onClick={() => {
@@ -125,7 +144,7 @@ const Nav = () => {
                                 <Link to={'/dash'}><button onClick={() => {
                                     setVisible(false)
                                 }} className="text-black text-xl font-semibold">Dashboard</button></Link>
-                    
+
                                 <button onClick={() => {
                                     handleclicked(); setVisible(false)
                                 }} className="text-black space-x-3 z-50 text-xl font-semibold 
