@@ -5,9 +5,10 @@ import { FaEnvelope, FaGithub, FaGithubAlt, FaGoogle, FaKey, FaUser, FaVoicemail
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Authprovider";
 import Swal from "sweetalert2";
+import axios from "axios";
 const Login = () => {
-    const {signIn,googleSignin}=useContext(AuthContext)
-    
+    const {signIn,googleSignin,gitSignin}=useContext(AuthContext)
+   
     const location = useLocation()
     const navigate = useNavigate();
     const handleSubmit = (e) => {
@@ -30,8 +31,36 @@ const Login = () => {
             })
     }
     const handleclicked=()=>{
+        
         googleSignin()
         .then(res=>{
+            const userInfo={
+                name:res.user.displayName,
+                email:res.user.email,
+                image:res.user.photoURL,
+            }
+            axios.post('https://catro-server.vercel.app/users',userInfo)
+            .then(res=>console.log(res.data))
+            Swal.fire("You are in here");
+        })
+        .catch(error=>{
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: `${error.message}`,
+              });
+        })
+    }
+    const handlegit=()=>{
+        gitSignin()
+        .then(res=>{
+            const userInfo={
+                name:res.user.displayName,
+                email:res.user.email,
+                image:res.user.photoURL,
+            }
+            axios.post('https://catro-server.vercel.app/users',userInfo)
+            .then(res=>console.log(res.data))
             Swal.fire("You are in here");
         })
         .catch(error=>{
@@ -85,7 +114,7 @@ const Login = () => {
                             <FaGoogle className="text-2xl text-white"></FaGoogle>
                              <span className="text-2xl text-white font-semibold">Google</span>
                         </button>
-                        <button className="w-full h-[48px] rounded-md
+                        <button onClick={handlegit} className="w-full h-[48px] rounded-md
                         border-2 border-white mt-5 flex justify-center items-center
                         space-x-3 bg-orange-400">
                             <FaGithub className="text-2xl text-white"></FaGithub>

@@ -9,8 +9,6 @@ import {
 import React, { createContext, useEffect, useState } from "react";
 import app from "./firebase.config";
 
-
-
 export const AuthContext = createContext(null)
 const googleprovider=new GoogleAuthProvider();
 const gitProvidor=new GithubAuthProvider
