@@ -9,7 +9,7 @@ const AllDonation=()=>{
     const navigate=useNavigate()
     const [vari,setVari]=useState(1)
     useEffect(()=>{
-         fetch('http://localhost:5000/protected_campaign',{
+         fetch('https://catro-server.vercel.app/protected_campaign',{
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -40,7 +40,7 @@ const AllDonation=()=>{
           }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/admin/campaign/${id}`,{
+                fetch(`https://catro-server.vercel.app/admin/campaign/${id}`,{
                     method:'DELETE',
                     headers:{
                         'content-type': 'application/json',
@@ -63,7 +63,7 @@ const AllDonation=()=>{
       
     }
     const handleStatus=(id)=>{
-        fetch(`http://localhost:5000/update/campaign/status/${id}`, {
+        fetch(`https://catro-server.vercel.app/update/campaign/status/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const AllDonation=()=>{
         })
         .then(data=>{
             if(data.acknowledged){
-                fetch(`http://localhost:5000/campaign/${id}`)
+                fetch(`https://catro-server.vercel.app/campaign/${id}`)
                 .then(res=>res.json())
                 .then(num=>{           
                     if(num.status==='unpause'){
@@ -89,7 +89,7 @@ const AllDonation=()=>{
                     else{
                         Swal.fire("Donation is close now");
                     }
-                    fetch('http://localhost:5000/protected_campaign',{
+                    fetch('https://catro-server.vercel.app/protected_campaign',{
                         headers: {
                             'content-type': 'application/json',
                             'authorization': `Bearer ${localStorage.getItem('jwt_token')}`

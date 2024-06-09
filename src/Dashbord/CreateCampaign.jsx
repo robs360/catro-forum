@@ -40,7 +40,7 @@ const Createcampaign = () => {
                 short_description,long_description,date,status,image:imageUrl
             }
             console.log(info)
-            fetch('http://localhost:5000/createcamp',{
+            fetch('https://catro-server.vercel.app/createcamp',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'

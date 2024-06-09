@@ -59,12 +59,12 @@ const router = createBrowserRouter([
      {
       path:'/details/:id',
       element:<Private><Details></Details></Private>,
-      loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
+      loader:({params})=>fetch(`https://catro-server.vercel.app/pat/${params.id}`)
      },
      {
       path:'/donation/details/:id',
       element:<Private><Detailsdonation></Detailsdonation></Private>,
-      loader:({params})=>fetch(`http://localhost:5000/campaign/${params.id}`)
+      loader:({params})=>fetch(`https://catro-server.vercel.app/campaign/${params.id}`)
      },
      {
       path:'/dash',
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
          {
           path:'/dash/update/:id',
           element:<Private><Update></Update></Private>,
-          loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
+          loader:({params})=>fetch(`https://catro-server.vercel.app/pat/${params.id}`)
          },
          {
            path:'/dash/createcamp',
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
          {
           path:'/dash/updatecamp/:id',
           element:<Private><UpdateCampaign></UpdateCampaign></Private>,
-          loader:({params})=>fetch(`http://localhost:5000/campaign/${params.id}`)
+          loader:({params})=>fetch(`https://catro-server.vercel.app/campaign/${params.id}`)
          },
          {
           path:'/dash/mydonation',
@@ -116,7 +116,7 @@ const router = createBrowserRouter([
          {
            path:'/dash/admin/petupdate/:id',
            element:<Private><PetUpdate></PetUpdate></Private>,
-           loader:({params})=>fetch(`http://localhost:5000/pat/${params.id}`)
+           loader:({params})=>fetch(`https://catro-server.vercel.app/pat/${params.id}`)
          },
          {
            path:'/dash/admin/donation',
@@ -125,7 +125,7 @@ const router = createBrowserRouter([
          {
           path:'/dash/admin/campupdate/:id',
           element:<Private><CampaignUpdate></CampaignUpdate></Private>,
-          loader:({params})=>fetch(`http://localhost:5000/campaign/${params.id}`)
+          loader:({params})=>fetch(`https://catro-server.vercel.app/campaign/${params.id}`)
          }
       ]
      },

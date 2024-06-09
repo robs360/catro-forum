@@ -9,7 +9,7 @@ const MyDonation = () => {
     const {user}=useContext(AuthContext)
     const [info, setInfo] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/donators', {
+        fetch('https://catro-server.vercel.app/donators', {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -32,7 +32,7 @@ const MyDonation = () => {
     }, [])
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/donators/${id}`, {
+        fetch(`https://catro-server.vercel.app/donators/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
@@ -50,7 +50,7 @@ const MyDonation = () => {
             })
             .then(data => {
                 Swal.fire("Refund will Procced");
-                fetch('http://localhost:5000/donators', {
+                fetch('https://catro-server.vercel.app/donators', {
                     headers: {
                         'content-type': 'application/json',
                         'authorization': `Bearer ${localStorage.getItem('jwt_token')}`

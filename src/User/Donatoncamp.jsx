@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Donationcamp=()=>{
     const [info,setInfo]=useState([]);
     useEffect(()=>{
-         axios.get('http://localhost:5000/campaign')
+         axios.get('https://catro-server.vercel.app/campaign')
          .then(res=>setInfo(res.data))
     },[])
     const bannerStyle = {

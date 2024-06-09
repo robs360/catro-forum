@@ -23,7 +23,7 @@ const UpdateCampaign = () => {
         }
         console.log(info)
         console.log(singleData._id)
-        fetch(`http://localhost:5000/updatecampaign/${singleData._id}`, {
+        fetch(`https://catro-server.vercel.app/updatecampaign/${singleData._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

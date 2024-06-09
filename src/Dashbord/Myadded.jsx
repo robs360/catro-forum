@@ -12,7 +12,7 @@ const MyAdded = () => {
     const [vari,setVari]=useState(false)
     const navigate=useNavigate()
     useEffect(() => {
-        fetch('http://localhost:5000/pet', {
+        fetch('https://catro-server.vercel.app/pet', {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -44,7 +44,7 @@ const MyAdded = () => {
             confirmButtonText: "Yes, Adopt it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/update/status/${id}`,{
+                fetch(`https://catro-server.vercel.app/update/status/${id}`,{
                     method:'PATCH',
                     headers:{
                         'content-type':'application/json'
@@ -55,7 +55,7 @@ const MyAdded = () => {
                 .then(data=>{
                     console.log(data)
 
-                    fetch('http://localhost:5000/pet', {
+                    fetch('https://catro-server.vercel.app/pet', {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -98,13 +98,13 @@ const MyAdded = () => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                axios.delete(`http://localhost:5000/petdelete/${id}`, {
+                axios.delete(`https://catro-server.vercel.app/petdelete/${id}`, {
                     headers: {
                         'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
                     }
                 })
                 .then(response => {
-                    fetch('http://localhost:5000/pet', {
+                    fetch('https://catro-server.vercel.app/pet', {
                         headers: {
                             'content-type': 'application/json',
                             'authorization': `Bearer ${localStorage.getItem('jwt_token')}`

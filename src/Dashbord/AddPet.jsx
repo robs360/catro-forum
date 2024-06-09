@@ -13,7 +13,7 @@ const AddPet = () => {
     const [value1, setValue] = useState('');
     const navigate=useNavigate();
     useEffect(()=>{
-        fetch('http://localhost:5000/pet',{
+        fetch('https://catro-server.vercel.app/pet',{
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -69,7 +69,7 @@ const AddPet = () => {
                     }
                     console.log(info)
                     
-                    fetch('http://localhost:5000/addpet',{
+                    fetch('https://catro-server.vercel.app/addpet',{
                        method:'POST',
                        headers:{
                          'content-type':'application/json',

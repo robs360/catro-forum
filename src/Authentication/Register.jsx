@@ -36,7 +36,7 @@ const Register = () => {
                 email:res.user.email,
                 image:photo,
             }
-            axios.post('http://localhost:5000/users',userInfo)
+            axios.post('https://catro-server.vercel.app/users',userInfo)
             .then(res=>console.log(res.data))
             updateProfile(auth.currentUser,{
                 displayName:Name,

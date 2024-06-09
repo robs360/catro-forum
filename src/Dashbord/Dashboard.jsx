@@ -16,7 +16,7 @@ const Dashboard = () => {
     };
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/isadmin/${user?.email}`, {
+            fetch(`https://catro-server.vercel.app/isadmin/${user?.email}`, {
                 headers: {
                     'content-type': 'application/json',
                     'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -38,7 +38,7 @@ const Dashboard = () => {
         }
     }, [user?.email])
     useEffect(() => {
-        fetch('http://localhost:5000/pet', {
+        fetch('https://catro-server.vercel.app/pet', {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`

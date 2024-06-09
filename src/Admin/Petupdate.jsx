@@ -21,7 +21,7 @@ const PetUpdate = () => {
             petName,petAge,petCategory,location,date,email,shortDes,
             description,image
         }
-        fetch(`http://localhost:5000/updatepet/${singleData._id}`,{
+        fetch(`https://catro-server.vercel.app/updatepet/${singleData._id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json',

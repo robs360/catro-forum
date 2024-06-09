@@ -21,7 +21,7 @@ const CampaignUpdate=()=>{
             category, max_donation, last_date, image, shorts_des,
             email
         }
-        fetch(`http://localhost:5000/updatecampaign/${singleData._id}`, {
+        fetch(`https://catro-server.vercel.app/updatecampaign/${singleData._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

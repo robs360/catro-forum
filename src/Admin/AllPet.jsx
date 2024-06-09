@@ -7,7 +7,7 @@ const AllPet = () => {
     const [info, setInfo] = useState([])
     const navigate=useNavigate()
     useEffect(() => {
-        fetch('http://localhost:5000/pet', {
+        fetch('https://catro-server.vercel.app/pet', {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -39,7 +39,7 @@ const AllPet = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/petdelete/${id}`,{
+                fetch(`https://catro-server.vercel.app/petdelete/${id}`,{
                     method:'DELETE',
                     headers:{
                         'content-type':'application/json'
@@ -48,7 +48,7 @@ const AllPet = () => {
                 .then(res=>res.json())
                 .then(data=>{
                     console.log(data)
-                    fetch('http://localhost:5000/pet', {
+                    fetch('https://catro-server.vercel.app/pet', {
                         headers: {
                             'content-type': 'application/json',
                             'authorization': `Bearer ${localStorage.getItem('jwt_token')}`

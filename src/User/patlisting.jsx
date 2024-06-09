@@ -8,7 +8,7 @@ const Patlisting = () => {
    
     
         useEffect(() => {
-            fetch('http://localhost:5000/pat')
+            fetch('https://catro-server.vercel.app/pat')
                 .then(res => res.json())
                 .then(data => {
                     const filterData = data.filter(item => item.category === drop)
@@ -26,7 +26,7 @@ const Patlisting = () => {
         e.preventDefault()
         const search = e.target.sea.value;
         console.log(search)
-        fetch(`http://localhost:5000/search?q=${search}`)
+        fetch(`https://catro-server.vercel.app/search?q=${search}`)
         .then(res => res.json())
             .then(data => {
                 setInfo(data)

@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 const jwtUser={email:currentUser?.email}
                   console.log(jwtUser)
-                   fetch('http://localhost:5000/jwt',{
+                   fetch('https://catro-server.vercel.app/jwt',{
                        method:'POST',
                        headers:{
                           'content-type':'application/json'

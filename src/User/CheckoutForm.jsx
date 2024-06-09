@@ -14,7 +14,7 @@ const CheckoutForm=({singleData})=>{
     useEffect(() => {
         if (singleData.maximum_donation > 0) {
             const price = { sum:singleData?.maximum_donation }
-            fetch('http://localhost:5000/create-payment-intent', {
+            fetch('https://catro-server.vercel.app/create-payment-intent', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -91,7 +91,7 @@ const CheckoutForm=({singleData})=>{
                 image:singleData.pet_image,
                 pet_name:singleData.category
             }
-            fetch('http://localhost:5000/donators',{
+            fetch('https://catro-server.vercel.app/donators',{
                 method:'POST',
                 headers: {
                     'content-type': 'application/json',

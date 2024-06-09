@@ -26,7 +26,7 @@ const Details = () => {
             petId: singleData._id, category: singleData.category,
             petName: singleData.name, author
         }
-        axios.post('http://localhost:5000/adopt', adoptInfo)
+        axios.post('https://catro-server.vercel.app/adopt', adoptInfo)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {

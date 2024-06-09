@@ -14,7 +14,7 @@ const MyCampaign = () => {
     const [modal,setModal]=useState(false);
     const [don,setDon]=useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/mycampaign', {
+        fetch('https://catro-server.vercel.app/mycampaign', {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -35,7 +35,7 @@ const MyCampaign = () => {
     }, [])
     
     useEffect(()=>{
-        fetch('http://localhost:5000/donators',{
+        fetch('https://catro-server.vercel.app/donators',{
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -58,7 +58,7 @@ const MyCampaign = () => {
     },[])
     console.log(don)
     const handleClicked = (id) => {
-        fetch(`http://localhost:5000/update/campaign/status/${id}`, {
+        fetch(`https://catro-server.vercel.app/update/campaign/status/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -75,7 +75,7 @@ const MyCampaign = () => {
         })
         .then(data=>{
             if(data.acknowledged){
-                fetch(`http://localhost:5000/campaign/${id}`)
+                fetch(`https://catro-server.vercel.app/campaign/${id}`)
                 .then(res=>res.json())
                 .then(num=>{
                     if(num.status==='unpause'){

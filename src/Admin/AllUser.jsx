@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const AllUser = () => {
     const [info, setInfo] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/users', {
+        fetch('https://catro-server.vercel.app/users', {
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -28,7 +28,7 @@ const AllUser = () => {
     }, [])
 
     const handleAdmin = (id) => {
-        fetch(`http://localhost:5000/make_admin/${id}`, {
+        fetch(`https://catro-server.vercel.app/make_admin/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
@@ -37,7 +37,7 @@ const AllUser = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            fetch('http://localhost:5000/users', {
+            fetch('https://catro-server.vercel.app/users', {
                 headers: {
                     'content-type': 'application/json',
                     'authorization': `Bearer ${localStorage.getItem('jwt_token')}`

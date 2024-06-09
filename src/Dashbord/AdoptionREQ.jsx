@@ -10,7 +10,7 @@ const AdoptionREQ=()=>{
     const [info2,setInfo2]=useState([])
     const {user}=useContext(AuthContext)
     useEffect(()=>{
-         fetch('http://localhost:5000/adoption_data',{
+         fetch('https://catro-server.vercel.app/adoption_data',{
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
@@ -32,7 +32,7 @@ const AdoptionREQ=()=>{
         })
     },[])
     const handleClick=(id)=>{
-       fetch(`http://localhost:5000/adoption_data/${id}`,{
+       fetch(`https://catro-server.vercel.app/adoption_data/${id}`,{
            headers:{
               'content-type': 'application/json',
            }
@@ -41,7 +41,7 @@ const AdoptionREQ=()=>{
        .then(data=>{
          console.log(data)
          if(data.petId){
-            fetch(`http://localhost:5000/update/status/${data.petId}`,{
+            fetch(`https://catro-server.vercel.app/update/status/${data.petId}`,{
                 method:'PATCH',
                 headers:{
                     'content-type': 'application/json',
@@ -57,7 +57,7 @@ const AdoptionREQ=()=>{
 
     const handleDelete=(id)=>{
 
-        fetch(`http://localhost:5000/adoption_data/${id}`,{
+        fetch(`https://catro-server.vercel.app/adoption_data/${id}`,{
             method:'DELETE',
             headers:{
                 'content-type': 'application/json',
@@ -66,7 +66,7 @@ const AdoptionREQ=()=>{
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
-            fetch('http://localhost:5000/adoption_data',{
+            fetch('https://catro-server.vercel.app/adoption_data',{
                 headers: {
                     'content-type': 'application/json',
                     'authorization': `Bearer ${localStorage.getItem('jwt_token')}`
