@@ -44,3 +44,16 @@ Bullet Featurs of the website
 
 can see the dashboard
 
+\
+how clone react project
+clone project
+git clone [url]
+
+enter into project
+cd react
+
+install Dependency
+npm install
+
+start
+npm run dev
