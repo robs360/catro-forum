@@ -18,3 +18,4 @@ Used Technology:
 .react-datepicker
 .react-responsive-carousel
 .react-axios
+.It is a website where anyone can adopt pet ,donation for pet etc
