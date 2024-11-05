@@ -33,7 +33,7 @@ const Update = () => {
             value1, image
         }
         console.log(info)
-
+        
         fetch(`https://catro-server.vercel.app/updatepet/${singleData._id}`, {
             method: 'PUT',
             headers: {

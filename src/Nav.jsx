@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './Authentication/Authprovider'
 import { FaBars, FaMoon, FaPlus, FaSignOutAlt, FaSun } from 'react-icons/fa'
 import './App.css'
+
 import { Tooltip } from 'react-tooltip'
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -32,9 +33,9 @@ const Nav = () => {
     };
     return (
         // 
-        <div className='w-full mt-3'>
-            <div className="w-[96%] mx-auto bg-gradient-to-b from-orange-300 to-orange-600  flex
-       items-center opacity-90 p-2 md:p-3 rounded-md justify-between">
+        <div className='w-[94%] mx-auto mt-2'>
+            <div className="w-[94%] fixed mx-auto bg-gradient-to-b from-orange-400 to-orange-600  flex
+       items-center opacity-80 p-2 md:p-3 justify-between">
                 <div>
                     <h1 className='flex text-white items-center text-xl
                 font-semibold'>CatroPat
@@ -42,7 +43,7 @@ const Nav = () => {
                     rounded-[50%] h-[35px] ml-2' alt="" srcset="" />
                     </h1>
                 </div>
-                <div className='hidden md:flex text-white list-style-none space-x-5 items-center'>
+                <div className='hidden md:flex text-white list-style-none space-x-6 items-center'>
                     <NavLink
                         to="/"
                         className={({ isActive, isPending }) =>

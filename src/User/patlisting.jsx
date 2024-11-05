@@ -6,7 +6,6 @@ const Patlisting = () => {
     const [info, setInfo] = useState([])
     const [drop, setDrop] = useState('cat')
    
-    
         useEffect(() => {
             fetch('https://catro-server.vercel.app/pat')
                 .then(res => res.json())
@@ -19,8 +18,7 @@ const Patlisting = () => {
     const handeChanged = (e) => {
         e.preventDefault()
         setDrop(e.target.value)
-        console.log(drop)
-       
+        console.log(drop)  
     }
     const handleSearch = (e) => {
         e.preventDefault()
