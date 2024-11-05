@@ -17,3 +17,54 @@ Currently, two official plugins are available:
 .react-datepicker
 .react-responsive-carousel
 .react-axios
+
+- solved probelm
+
+- It is a website where anyone can adopt pet ,donation for pet etc
+Used Technology:
+
+.React
+
+.React router-dom
+
+.Tailwind css
+
+.firebase
+
+.flow-bite
+
+.react-icons
+
+.react-skeleton
+
+.react-datepicker
+
+.react-datepicker
+
+.react-responsive-carousel
+
+.react-axios
+
+.It is a website where anyone can adopt pet ,donation for pet etc
+
+Bullet Featurs of the website
+
+.can adopt in pet 
+
+.can donate in a pet
+
+can see the dashboard
+
+\
+how clone react project
+clone project
+git clone [url]
+
+enter into project
+cd react
+
+install Dependency
+npm install
+
+start
+npm run dev
