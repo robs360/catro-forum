@@ -1,0 +1,41 @@
+/* Container style */
+.animated-border {
+    position: relative;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Border style with animation */
+.animated-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #faf9d0;
+    border-radius: 5px;
+    clip-path: inset(0 50% 100% 0); /* Initial clip-path */
+    animation: borderMove 3s linear infinite;
+}
+
+/* Smooth animation keyframes */
+@keyframes borderMove {
+    0% {
+        clip-path: inset(0 50% 100% 0); /* Start from top */
+    }
+    25% {
+        clip-path: inset(0 0 75% 0); /* Move to the right smoothly */
+    }
+    50% {
+        clip-path: inset(75% 0 0 0); /* Move to the bottom */
+    }
+    75% {
+        clip-path: inset(0 100% 0 0); /* Move to the left */
+    }
+    100% {
+        clip-path: inset(0 50% 100% 0); /* Complete full circle back to top */
+    }
+}

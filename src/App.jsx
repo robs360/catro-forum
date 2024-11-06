@@ -6,7 +6,7 @@ import Footer from './Home/Footer'
 function App() {
   
   return (
-     <div>
+     <div className='w-full'>
       <Nav></Nav>
         <Outlet></Outlet>
         <Footer></Footer>

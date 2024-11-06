@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './Authentication/Authprovider'
 import { FaBars, FaMoon, FaPlus, FaSignOutAlt, FaSun } from 'react-icons/fa'
 import './App.css'
-
+import '../src/Home/style.css'
 import { Tooltip } from 'react-tooltip'
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -33,9 +33,9 @@ const Nav = () => {
     };
     return (
         // 
-        <div className='w-[94%] mx-auto mt-2'>
-            <div className="w-[94%] fixed mx-auto bg-gradient-to-b from-orange-400 to-orange-600  flex
-       items-center opacity-80 p-2 md:p-3 justify-between">
+        <div className='mt-2 w-full mx-auto z-50'>
+            <div className="w-full bg-blue-900   flex
+       items-center opacity-90 p-2 md:p-3 justify-between">
                 <div>
                     <h1 className='flex text-white items-center text-xl
                 font-semibold'>CatroPat
@@ -43,7 +43,7 @@ const Nav = () => {
                     rounded-[50%] h-[35px] ml-2' alt="" srcset="" />
                     </h1>
                 </div>
-                <div className='hidden md:flex text-white list-style-none space-x-6 items-center'>
+                <div className='hidden md:flex text-white list-style-none space-x-9 items-center'>
                     <NavLink
                         to="/"
                         className={({ isActive, isPending }) =>
@@ -77,17 +77,9 @@ const Nav = () => {
                     >
                         Register
                     </NavLink>
-                    <label className='flex items-center space-x-2'>
-                        <FaSun></FaSun>
-                        <input className='rounded-[50%]'
-                            type="checkbox"
-                            checked={isChecked}
-                            onChange={handleCheckboxChange}
-                        />
-                        <FaMoon></FaMoon>
-                    </label>
+                    
                 </div>
-                <div className="flex md:hidden">
+                <div className="flex md:hidden z-50">
                     <button onClick={() => {
                         if (visit) {
                             setVisit(false)
@@ -98,8 +90,8 @@ const Nav = () => {
                     }}>
                         {
                             visit ?
-                                (<FaPlus className='text-xl text-white rotate-45'></FaPlus>) :
-                                (<FaBars className='text-xl text-white'></FaBars>)
+                                (<FaPlus className='z-50 text-xl text-white rotate-45'></FaPlus>) :
+                                (<FaBars className='z-50 text-xl text-white'></FaBars>)
                         }
                     </button>
                     {
@@ -108,8 +100,8 @@ const Nav = () => {
                                 <Link to={'/'}>
                                     <li>Home</li>
                                 </Link>
-                                <Link to={'/patlist'}><li>Pat Listing</li></Link>
-                                <Link to={'/donation'}><li>Donation</li></Link>
+                                <Link to={'/patlist'}><li className='z-50'>Pat Listing</li></Link>
+                                <Link to={'/donation'}><li className='z-50'>Donation</li></Link>
                                 <Link to={'/reg'}><li>Register</li></Link>
                             </ul>
                         </div>) : (<></>)
@@ -132,7 +124,7 @@ const Nav = () => {
                             <Tooltip id="hello" />
                         </button>) : (<Link to={'/log'}>
                             <button
-                                className="text-white btn text-xl font-semibold">
+                                className="text-white animated-border  bg-orange-400 px-3 py-1 rounded-md shadow-lg btn text-xl font-semibold">
                                 Login
                             </button>
                         </Link>)
