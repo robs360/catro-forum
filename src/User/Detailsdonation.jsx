@@ -6,6 +6,7 @@ import { FaPlus } from "react-icons/fa";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import '../Home/style.css'
 const stripePromise = loadStripe('pk_test_51PM2J8EJ4sCmNGOlp0lWIj1nIJAit6cK07PhE5dCR453mHFf9O0F8uj4mHcNqrQlOCdJqOSSOBovhBNOFkNqxA5k00FrwVLVQr')
 const Detailsdonation = () => {
     const singleData = useLoaderData()
@@ -33,7 +34,7 @@ const Detailsdonation = () => {
             <div>
                 <img src={singleData.pet_image} className="h-[440px] rounded-md" alt="" srcset="" />
             </div>
-            <div className="w-full md:w-[52%] bg-white p-2 rounded-md">
+            <div className="w-full md:w-[52%] bg-white p-4 rounded-md">
                 <div>
 
                     <p className="text-[17px]">
@@ -61,7 +62,7 @@ const Detailsdonation = () => {
                     <h1 className="text-[17px] font-medium  
                      ">Added Date:{singleData.date} tk</h1>
                     <button onClick={handleCheck} className="text-xl p-2 italic text-white
-                     bg-black w-[100px] rounded-md font-medium">Donate</button>
+                     bg-orange-400 w-[100px] rounded-md font-medium ">Donate</button>
                     {
                         modal && (
                             <div className="modal">

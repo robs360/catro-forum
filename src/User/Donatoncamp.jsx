@@ -30,24 +30,21 @@ const Donationcamp=()=>{
             <div className="w-full min-h-[50vh] gap-7 p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
                     info?.map(item=><div className="w-[356px] shadow-2xl flex flex-col
-                    mx-auto rounded-md p-2 bg-[#ffffff80]">
+                    mx-auto rounded-md p-4 bg-[#ffffff80]">
                             <img src={item.pet_image} className="w-full 
-                            rounded-md h-[330px]" alt="" srcset="" />
+                            rounded-md h-[280px]" alt="" srcset="" />
                             <div className="flex justify-between mt-2 
                             text-[16px] font-medium">
-                                <h1><span className="text-gray-700">Category:</span>:{item.category}</h1>
-                                <h1><span className="text-gray-700">Max Donation:</span>{item.maximum_donation}</h1>
+                                <h1 className="text-[15px]"><span className="text-gray-700">Category:</span>:{item.category}</h1>
+                                <h1 className="text-[15px]"><span className="text-gray-700">Max Donation:</span>{item.maximum_donation}</h1>
                             </div>
                             <div className=" mt-2 
                             text-[16px] font-medium">
-                                <h1><span className="text-gray-700">Last Date Of Donation:</span>{item.last_date_of_donation}</h1>
+                                <h1 className="text--[15px]"><span className="text-gray-700">Last Date Of Donation:</span>{item.last_date_of_donation}</h1>
                             </div>
-                            <div className=" mt-2 
-                            text-[16px] font-medium">
-                                <h1><span className="text-gray-700">Short Description:</span>{item.short_description}</h1>
-                            </div>
-                            <Link to={`/donation/details/${item._id}`}><button className="w-full p-2 bg-black text-xl font-medium
-                            mt-3 rounded-md text-white italic">Details</button></Link>
+                            
+                            <Link to={`/donation/details/${item._id}`}><button className="w-full p-1 text-xl font-medium
+                            mt-3 rounded-md text-white bg-orange-400 italic">Details</button></Link>
                     </div>)
                 }
             </div>

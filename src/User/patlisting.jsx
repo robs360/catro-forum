@@ -50,8 +50,8 @@ const Patlisting = () => {
                         <input placeholder="Search Here" name="sea" type="text" className="w-[200px] h-[45px]
                   rounded-l-2xl border-2 border-black" />
                         <button type="submit"  className="rounded-r-2xl
-                   text-[18px] font-semibold p-1 bg-blue-800 
-                   h-[44px] border-2 border-black text-orange-400">Search</button>
+                   text-[18px] font-semibold p-1 bg-orange-400 
+                   h-[44px] border-2 border-black text-white">Search</button>
                     </form>
                 </div>
             </div>
