@@ -33,17 +33,17 @@ const Nav = () => {
     };
 
 
-  const handleButtonClick = () => {
-    // Delay the state update to allow the transition to take effect
-    setVisit(false);
-  };
+    const handleButtonClick = () => {
+        // Delay the state update to allow the transition to take effect
+        setVisit(false);
+    };
     return (
         // 
         <div className='mt-2 w-full mx-auto z-50'>
             <div className="w-full bg-blue-900   flex
        items-center opacity-90 p-2 md:p-3 justify-between">
                 <div>
-                    <h1 className='flex text-white items-center text-xl
+                    <h1 className='flex text-orange-400 items-center text-xl
                 font-semibold'>CatroPat
                         <img src={logo} className='w-[35px] 
                     rounded-[50%] h-[35px] ml-2' alt="" srcset="" />
@@ -83,7 +83,7 @@ const Nav = () => {
                     >
                         Register
                     </NavLink>
-                    
+
                 </div>
                 <div className="flex md:hidden z-50">
                     <button onClick={() => {
@@ -101,35 +101,46 @@ const Nav = () => {
                         }
                     </button>
                     {
-                        visit ? ( <div
-                            className={`h-[100vh] w-[210px] pl-3 z-50 bg-black absolute top-[10px] transition-all duration-1000 ease-in-out ${
-                              visit ? "left-0" : "-left-[300px]"
+                        visit ? (<div
+                            className={`h-[100vh] w-[210px] p-3 z-50 bg-black absolute top-[10px] transition-all duration-1000 ease-in-out ${
+                                visit ? "left-0" : "-left-[300px]"
                             }`}
-                          >
+                        >
                             {/* Button to hide the sidebar */}
                             <button>
-                              <FaPlus
-                                onClick={handleButtonClick}
-                                className="z-50 p-2 text-4xl text-white rotate-45 absolute top-0 right-0 bg-gray-300 rounded-[50%]"
-                              />
+                                <FaPlus
+                                    onClick={handleButtonClick}
+                                    className="z-50 p-2 text-4xl text-white rotate-45 absolute top-0 right-0 bg-gray-300 rounded-[50%]"
+                                />
                             </button>
-                      
+
                             {/* Sidebar navigation links */}
                             <ul className="text-white flex flex-col">
-                              <NavLink to={"/"} className={"p-2"}>
-                                Home
-                              </NavLink>
-                              <NavLink to={"/patlist"} className={"p-2"}>
-                                Patlist
-                              </NavLink>
-                              <NavLink to={"/donation"} className={"p-2"}>
-                                Donation
-                              </NavLink>
-                              <NavLink to={"/reg"} className={"p-2"}>
-                                Register
-                              </NavLink>
+                                <NavLink
+                                    to={"/"}
+                                    className={({ isActive }) =>
+                                        `p-2 ${isActive ? "bg-gray-300 rounded-md font-medium text-orange-400" : ""}`
+                                    }
+                                >
+                                    Home
+                                </NavLink>
+                                <NavLink className={({ isActive }) =>
+                                        `p-2 ${isActive ? "bg-gray-300 rounded-md p-2 font-medium text-orange-400" : ""}`
+                                    } to={"/patlist"} >
+                                    Patlist
+                                </NavLink>
+                                <NavLink className={({ isActive }) =>
+                                        `p-2 ${isActive ? "bg-gray-300 rounded-md p-2 font-medium text-orange-400" : ""}`
+                                    } to={"/donation"}>
+                                    Donation
+                                </NavLink>
+                                <NavLink className={({ isActive }) =>
+                                        `p-2 ${isActive ? "bg-gray-300 rounded-md p-2 font-medium text-orange-400" : ""}`
+                                    } to={"/reg"}>
+                                    Register
+                                </NavLink>
                             </ul>
-                          </div>) : (<></>)
+                        </div>) : (<></>)
                     }
 
                 </div>

@@ -18,10 +18,10 @@ const Banner = () => {
     return (
         <div style={bgStyle} className='w-full mx-auto min-h-[70vh] p-3'>
             <div className='p-3 rounded-md mt-5'>
-                <div className='w-[360px] md:w-[460px] md: mx-auto mt-20 p-3 text-black md:text-white bg-white opacity-70 md:bg-transparent md:opacity-100'>
+                <div className='w-[360px] md:w-[460px] md: mx-auto mt-20 p-3 '>
                     <img src={symbol} className='w-[90px] h-[90px]  block mx-auto' alt="" />
                     <h1 className='font-medium text-3xl text-center my-2'>CatroPet</h1>
-                    <p className='mt-2 text-center'>All American Pet Photo Day encourages
+                    <p className='mt-2 text-center text-black rounded-md md:text-white bg-white opacity-70 md:bg-transparent md:opacity-100 p-2'>All American Pet Photo Day encourages
                         pet owners to share their favorite pet photos on July 11.
                         Be sure to charge your camera and be prepared to take adorable pictures of your pets!</p>
 

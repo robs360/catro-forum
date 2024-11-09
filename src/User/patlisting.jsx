@@ -50,35 +50,35 @@ const Patlisting = () => {
                         <input placeholder="Search Here" name="sea" type="text" className="w-[200px] h-[45px]
                   rounded-l-2xl border-2 border-black" />
                         <button type="submit"  className="rounded-r-2xl
-                   text-[18px] font-semibold p-1 bg-blue-400 
-                   h-[45px] border-2 border-black">Search</button>
+                   text-[18px] font-semibold p-1 bg-blue-800 
+                   h-[44px] border-2 border-black text-orange-400">Search</button>
                     </form>
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-14">
                 {
                     info?.map(item => <div className="flex shadow-xl 
-                rounded-md p-1 flex-col md:flex-row gap-4 mx-auto  border-gray-400 border-[1px]
+                rounded-md p-2 flex-col md:flex-row gap-4 mx-auto  border-orange-300 border-[1px]
                 w-[365px] md:w-[500px] bg-[#ffffff] justify-between items-center">
                         <div>
                             <img src={item.image} className="w-[270px] h-[240px] md:w-[230px] md:h-[200px] rounded-md" alt="" srcset="" />
                         </div>
                         
-                        <div>
+                        <div className="flex-grow">
                             <div className="flex space-x-5">
-                                <h1 className="text-[17px] font-semibold text-gray-500">Category:{item.category}</h1>
-                                <h1 className="text-[17px] font-semibold text-gray-500">Name:{item.name}</h1>
+                                <h1 className="text-[15px] font-semibold text-black">Category:{item.category}</h1>
+                                <h1 className="text-[15px] font-semibold text-black">Name:{item.name}</h1>
                             </div>
                             <div className="flex space-x-5 my-4">
-                                <h1 className="text-[17px] font-semibold text-gray-500">Age:{item.age}</h1>
-                                <h1 className="text-[17px] font-semibold text-gray-500">Title: {(item?.title).slice(0, 15)}</h1>
+                                <h1 className="text-[15px] font-semibold text-black">Age:{item.age}</h1>
+                                <h1 className="text-[15px] font-semibold text-black">Title: {(item?.title).slice(0, 15)}</h1>
 
                             </div>
                             <div className="flex space-x-4">
-                                <h1 className="text-[17px] font-semibold text-gray-500">Date:{item.date}</h1>
-                                <h1 className="text-[17px] font-semibold text-gray-500">{item.location}</h1>
+                                <h1 className="text-[15px] font-semibold text-black">Date:{item.date}</h1>
+                                <h1 className="text-[15px] font-semibold text-black">{item.location}</h1>
                             </div>
-                           <Link to={`/details/${item._id}`}> <button className="w-[200px] text-xl bg-black
+                           <Link to={`/details/${item._id}`}> <button className="w-[200px] text-xl bg-orange-400
                             px-2 py-1  rounded-lg font-medium text-white mt-5">View Details</button></Link>
                         </div>
                     </div>)
