@@ -15,7 +15,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    border: 2px solid #faf9d0;
+    border: 2px solid #f6fad0d9;
     border-radius: 5px;
     clip-path: inset(0 50% 100% 0); /* Initial clip-path */
     animation: borderMove 3s linear infinite;

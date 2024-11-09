@@ -31,6 +31,12 @@ const Nav = () => {
     const handleCheckboxChange = (event) => {
         setIsChecked(event.target.checked);
     };
+
+
+  const handleButtonClick = () => {
+    // Delay the state update to allow the transition to take effect
+    setVisit(false);
+  };
     return (
         // 
         <div className='mt-2 w-full mx-auto z-50'>
@@ -90,21 +96,40 @@ const Nav = () => {
                     }}>
                         {
                             visit ?
-                                (<FaPlus className='z-50 text-xl text-white rotate-45'></FaPlus>) :
+                                (<></>) :
                                 (<FaBars className='z-50 text-xl text-white'></FaBars>)
                         }
                     </button>
                     {
-                        visit ? (<div className="flex flex-col absolute menu z-50">
-                            <ul className="flex flex-col gap-4 z-50">
-                                <Link to={'/'}>
-                                    <li>Home</li>
-                                </Link>
-                                <Link to={'/patlist'}><li className='z-50'>Pat Listing</li></Link>
-                                <Link to={'/donation'}><li className='z-50'>Donation</li></Link>
-                                <Link to={'/reg'}><li>Register</li></Link>
+                        visit ? ( <div
+                            className={`h-[100vh] w-[210px] pl-3 z-50 bg-black absolute top-[10px] transition-all duration-1000 ease-in-out ${
+                              visit ? "left-0" : "-left-[300px]"
+                            }`}
+                          >
+                            {/* Button to hide the sidebar */}
+                            <button>
+                              <FaPlus
+                                onClick={handleButtonClick}
+                                className="z-50 p-2 text-4xl text-white rotate-45 absolute top-0 right-0 bg-gray-300 rounded-[50%]"
+                              />
+                            </button>
+                      
+                            {/* Sidebar navigation links */}
+                            <ul className="text-white flex flex-col">
+                              <NavLink to={"/"} className={"p-2"}>
+                                Home
+                              </NavLink>
+                              <NavLink to={"/patlist"} className={"p-2"}>
+                                Patlist
+                              </NavLink>
+                              <NavLink to={"/donation"} className={"p-2"}>
+                                Donation
+                              </NavLink>
+                              <NavLink to={"/reg"} className={"p-2"}>
+                                Register
+                              </NavLink>
                             </ul>
-                        </div>) : (<></>)
+                          </div>) : (<></>)
                     }
 
                 </div>
